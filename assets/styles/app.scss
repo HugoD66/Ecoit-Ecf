@@ -8,6 +8,7 @@
 }
 
 #back {
+  z-index: -1;
   position: fixed;
   top: 0;
   left: 0;
@@ -20,7 +21,6 @@
 .container-fluid {
   display: flex;
   align-items: flex-start;
-
 }
 .logo {
   width:135px;
@@ -206,4 +206,9 @@ section .btn{
   .card {
     width: 100%;
   }
+}
+.contain-register {
+  z-index: 1;
+  background-color: #B0413E;
+  color: #428813;
 }

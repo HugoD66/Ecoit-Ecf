@@ -3,9 +3,12 @@ controllers:
     type: annotation
 
 register:
-    path:       /register
+    path: /register
     controller: App\Controller\RegistrationController::register
 
+login:
+    path: /login
+    methods: GET
 
 app_logout:
     path: /logout

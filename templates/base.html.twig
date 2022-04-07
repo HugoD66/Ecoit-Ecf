@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <title>{% block title %}Page d'acceuil-ECOIT{% endblock %}</title>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+
     {% block stylesheets %}
         {{ encore_entry_link_tags('app') }}
     {% endblock %}
@@ -27,7 +29,7 @@
                         <a class="nav-link active hover-navbar" aria-current="page">Acceuil</a>
                     </li>
                     <li class="nav-item p-2 m-4">
-                        <a class="nav-link hover-navbar" href="#">Liste des formations</a>
+                        <a class="nav-link hover-navbar" href="/formation">Liste des formations</a>
                     </li>
                     <li class="nav-item p-2 m-4">
                         <a class="nav-link hover-navbar" href="https://www.google.com">Planning</a>
@@ -40,7 +42,6 @@
         </div>
     </nav>
     {% block body %}
-
     {% endblock %}
     <div class="footer">
         <div class="contact col-md-4 d-flex  justify-content-center mb-3 mb-md-0 me-md-auto  text-decoration-none"><u>Nous contacter:</u></div>
@@ -61,6 +62,7 @@
 <div class=" modal  fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
+            <img class="back-modal" src="image/backfloote.jpg" alt="Image du modal">
             <div class="modal-header">
                 <h5 class="modal-title" id="staticBackdropLabel">En savoir plus ...</h5>
             </div>
@@ -73,10 +75,11 @@
                     À terme, EcoIT désire devenir la référence française pour les développeurs soucieux de leur
                     impact digital. Et pourquoi pas délivrer enfin un label officiel pour classer les sites web selon
                     leur empreinte numérique.</p>
+                <div class="modal-footer">
+                    <button type="button" class="btn" data-bs-dismiss="modal">Retour Acceuil</button>
+                </div>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn" data-bs-dismiss="modal">Retour Acceuil</button>
-            </div>
+
         </div>
     </div>
 </div>

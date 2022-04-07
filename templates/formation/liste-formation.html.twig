@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block body %}
+
+    <div class="titre-formation"><h1>Liste des formations:</h1></div>
+    <div class="container"  id="contain-formation">
+        <div class="row justify-content-around">
+
+            {% for i in 0..1 %}
+            {% include 'formation/carte-defilement.php' %}
+            {% endfor %}
+
+
+        </div>
+    </div>
+{% endblock %}

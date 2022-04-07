@@ -11,7 +11,6 @@
   position: fixed;
   top: 0;
   left: 0;
-  /* Préserve le ratio de l'image */
   min-width: 100%;
   min-height: 100%;
   background-size: cover;
@@ -134,25 +133,27 @@ section .btn{
 }
 .modal {
   color: #f2f1f1;
-  width:100%;
-  margin:0 auto;
 }
 .modal-title {
   font-size: xx-large;
   font-family: New Century Schoolbook, TeX Gyre Schola, serif;
 
 }
-/**
+.back-modal {
+  position: fixed;
+  background-size: cover;
+  width: 498px;
+  height: 578px;
+}
 .modal-content {
   font-size: large;
   font-family: Verdana, Geneva, sans-serif;
   text-align: center;
-  background-image: url('public/image/backfloote.jpg');
   border-color: #2D5E0F;
   border-radius: 10px;
 }
 
- */
+
 .modal button {
   border-radius: 12px;
   border: 1px solid white;
@@ -175,23 +176,16 @@ section .btn{
   position: relative;
   width: 95%;
   height: 60%;
-
 }
 ::-webkit-scrollbar {
   width: 10px;
 }
-
-/* Track */
 ::-webkit-scrollbar-track {
   background: #20400b;
 }
-
-/* Handle */
 ::-webkit-scrollbar-thumb {
   background: black;
 }
-
-/* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #20400b;
 }

@@ -11,8 +11,10 @@ class FormationController extends AbstractController
     #[Route('/formation', name: 'app_formation')]
     public function index(): Response
     {
-        return $this->render('formation/index.html.twig', [
-            'controller_name' => 'FormationController',
+        return $this->render('formation/liste-formation.html.twig', [
+            'title' => 'Eco-it Liste des Formations'
         ]);
     }
 }
+
+

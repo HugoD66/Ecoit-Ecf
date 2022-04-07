@@ -1,19 +1,83 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
-        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
-        {% block stylesheets %}
-            {{ encore_entry_link_tags('app') }}
-        {% endblock %}
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Page d'acceuil-ECOIT{% endblock %}</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('app') }}
+    {% endblock %}
+    {% block javascripts %}
+        {{ encore_entry_script_tags('app') }}
+    {% endblock %}
 
-        {% block javascripts %}
-            {{ encore_entry_script_tags('app') }}
-        {% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-    </body>
+</head>
+<body>
+<div class="back">
+    <img href="image/backgroundtest2.jpg" id="back" alt="Image de fond" src="image/backgroundtest.jpg">
+    <nav class="navbar navbar-expand-md navbar-dark" aria-label="navbar">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample03" aria-controls="navbarsExample03" aria-expanded="false" aria-label="navbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <img class="logo" src="image/ECOIT-without-background.png" alt="Image de fond">
+            <div class="collapse navbar-collapse justify-content-end" id="navbarsExample03">
+                <ul class="navbar-nav mb-2   mb-sm-0 navbar-left">
+                    <li class="nav-item p-2 m-4">
+                        <a class="nav-link active hover-navbar" aria-current="page">Acceuil</a>
+                    </li>
+                    <li class="nav-item p-2 m-4">
+                        <a class="nav-link hover-navbar" href="#">Liste des formations</a>
+                    </li>
+                    <li class="nav-item p-2 m-4">
+                        <a class="nav-link hover-navbar" href="https://www.google.com">Planning</a>
+                    </li>
+                    <li class="nav-item p-2 m-4">
+                        <a class="nav-link hover-navbar" href="#">Se connecter</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    {% block body %}
+
+    {% endblock %}
+    <div class="footer">
+        <div class="contact col-md-4 d-flex  justify-content-center mb-3 mb-md-0 me-md-auto  text-decoration-none"><u>Nous contacter:</u></div>
+        <div class="row">
+            <section class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+                <img class="btn btn-outline-light" src="image/facebook.svg" alt="facebook" role="button" href="https://www.facebook.com/LesVertsMoutons" onclick="window.open(this.href, '_blank'); return false;">
+                <img class="btn btn-outline-light" src="image/github.svg" alt="git" href="#!" role="button">
+                <img class="btn btn-outline-light" src="image/google.svg" alt="google" href="#!" role="button">
+                <img class="btn btn-outline-light" src="image/instagram.svg" alt="insta" role="button" href="https://www.instagram.com/?hl=fr" onclick="window.open(this.href, '_blank'); return false;">
+            </section>
+        </div>
+    </div>
+</div>
+</body>
+
+
+
+<div class=" modal  fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">En savoir plus ...</h5>
+            </div>
+            <div class="modal-body">
+                <p>      En matière d’émissions de CO2, il pollue 1.5 fois plus que le transport aérien. D’ailleurs, en 20
+                    ans, le poids d’une page web a été multiplié par 115 (source : https://www.greenit.fr/)
+                    Face à ce constat, un organisme de formation a été fondé en 2017 : EcoIT.<br><br>        Son objectif est
+                    d’être une plateforme d’éducation permettant à tout instructeur expert en accessibilité et en
+                    éco-conception web de présenter des modules de cours.<br><br>
+                    À terme, EcoIT désire devenir la référence française pour les développeurs soucieux de leur
+                    impact digital. Et pourquoi pas délivrer enfin un label officiel pour classer les sites web selon
+                    leur empreinte numérique.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn" data-bs-dismiss="modal">Retour Acceuil</button>
+            </div>
+        </div>
+    </div>
+</div>
 </html>

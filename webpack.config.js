@@ -14,6 +14,7 @@ Encore
     // only needed for CDN's or sub-directory deploy
     //.setManifestKeyPrefix('build/')
 
+
     /*
      * ENTRY CONFIG
      *
@@ -58,6 +59,17 @@ Encore
     // enables Sass/SCSS support
     .enableSassLoader()
 
+    .configureImageRule({
+        // tell Webpack it should consider inlining
+        type: 'asset',
+        //maxSize: 4 * 1024, // 4 kb - the default is 8kb
+    })
+
+    .configureFontRule({
+        type: 'asset',
+        //maxSize: 4 * 1024
+    })
+;
     // uncomment if you use TypeScript
     //.enableTypeScriptLoader()
 

@@ -2,6 +2,11 @@ controllers:
     resource: ../src/Controller/
     type: annotation
 
+register:
+    path:       /register
+    controller: App\Controller\RegistrationController::register
+
+
 app_logout:
     path: /logout
     methods: GET

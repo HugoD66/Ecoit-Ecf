@@ -1,11 +1,15 @@
-<h1>Hi! Please confirm your email!</h1>
 
-<p>
-    Please confirm your email address by clicking the following link: <br><br>
-    <a href="{{ signedUrl }}">Confirm my Email</a>.
-    This link will expire in {{ expiresAtMessageKey|trans(expiresAtMessageData, 'VerifyEmailBundle') }}.
-</p>
+    {% apply markdown_to_html %}
+    Bievenu !
+    ===========================
 
-<p>
-    Cheers!
-</p>
+
+
+    Vous vous êtes enregistré sur notre site;
+
+    <a href="{{ signedUrl }}">**Confirmez votre adresse mail**</a>.
+    Ce lien expire dans : {{ expiresAtMessageKey|trans(expiresAtMessageData, 'VerifyEmailBundle') }}.
+
+
+    Visitez notre [**site**](https://github.com/HugoD66/Ecoit-Ecf.git) !
+{% endapply %}

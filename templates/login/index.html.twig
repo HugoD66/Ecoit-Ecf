@@ -4,7 +4,7 @@
 
 {% block body %}
 <div class="titre-formation"><h1>{{ title }}</h1></div>
-<form class="connexion-form">
+<form class="connexion-form"  id="seconnecter">
     <div class="form-registry" id="form-css" action="{{ path('app_login') }}" method="post">
         <label  for="email">Email </label>
         <input type="email" class="form-control" id="email" name="_email" placeholder="ecoit@example.com"/>
@@ -14,9 +14,9 @@
         <input type="password" class="form-control" id="password" placeholder="Entrez votre mot de passe ici" name="_password">
     </div>
     <button class="button" type="submit"><span></span>Connexion</button>
-
-</form>
     <div class="premiere-visite">
-        <button class="button" type="button"><span></span><a href="{{ path('register') }}">Première visite ?</button>
+        <button class="button" type="button"><span></span><a href="{{ path('register') }}">Première visite ?</a></button>
     </div>
+</form>
+
 {% endblock %}

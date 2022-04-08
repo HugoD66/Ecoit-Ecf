@@ -8,11 +8,11 @@ register:
 
 login:
     path: /login
-    methods: GET
+    methods: App\Controller\LoginController::login
 
 app_logout:
     path: /logout
-    methods: GET
+    methods: App\Controller\LogoutController::logout
 
 kernel:
     resource: ../src/Kernel.php

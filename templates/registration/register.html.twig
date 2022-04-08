@@ -6,13 +6,14 @@
     {% for flash_error in app.flashes('verify_email_error') %}
         <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
     {% endfor %}
+
     <div class="titre-formation"><h1>{{ title }}</h1></div>
-    <div class="connexion-form">
+    <div class="connexion-form" id="sinscrire">
         <div class="form-registry">
-            <label  for="username">Pseudo: </label>
+            <label  for="username">Pseudo</label>
             <input type="username" class="form-control" id="username" name="_username" placeholder="Enok"/>
         </div>
-    <div class="form-registry" id="form-css" action="{{ path('app_login') }}" method="post">
+    <div class="form-registry" id="form-css" action="{{ path('register') }}" method="post">
         <label  for="email">Email </label>
         <input type="email" class="form-control" id="email" name="_email" placeholder="ecoit@example.com"/>
     </div>
@@ -20,6 +21,7 @@
         <label for="password">Password</label>
         <input type="password" class="form-control" id="password" placeholder="Entrez votre mot de passe ici" name="_password">
     </div>
-    <button class="button" type="submit" id="enregistrement"><span></span>Connexion</button>
+    <button class="button" type="submit" id="enregistrement"><span></span>avav</button>
     </div>
+
 {% endblock %}

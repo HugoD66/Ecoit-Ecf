@@ -229,19 +229,17 @@ span {
   top: auto;
   left: 23%;
   text-align: center;
-  background-color: rgba(168, 80, 67, 0.25);
   height: 64%;
   width: 55%;
   font-family: $font-paragraph;
   justify-content: center;
-  align-items: center;
   margin-bottom: 43%;
+
   label {
       margin: 4%;
-      text-align: center;
-      justify-content: center;
+
       font-size: 28px;
-      color: white;
+      color: black;
     }
     input {
       position: relative;
@@ -255,13 +253,17 @@ span {
     font-family:  $font-button;
   }
 }
+#seconnecter {
+  background-image: url("../../public/image/login-picture.jpg");
+}
+#sinscrire {
+  background-image: url("../../public/image/liste-cour.jpg");
+}
 .premiere-visite {
   font-family:  $font-button;
   display:flex;
   justify-content: center;
-  padding: 20px;
   align-items: center;
-  margin-bottom: 150px;
 }
 @media screen and (max-width: 576px ) {
   .navbar {

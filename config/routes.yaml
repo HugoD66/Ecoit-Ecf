@@ -12,7 +12,7 @@ login:
 
 app_logout:
     path: /logout
-    methods: App\Controller\LogoutController::logout
+    methods: GET
 
 kernel:
     resource: ../src/Kernel.php

@@ -29,6 +29,7 @@ class PostulerController extends AbstractController
         }
         return $this->render('postuler/index.html.twig', [
             'controller_name' => 'PostulerController',
+            'title' => 'Postuler pour EcoIT',
         ]);
     }
 }

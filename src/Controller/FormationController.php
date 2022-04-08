@@ -12,7 +12,7 @@ class FormationController extends AbstractController
     public function index(): Response
     {
         return $this->render('formation/liste-formation.html.twig', [
-            'title' => 'Eco-it Liste des Formations'
+            'title' => 'Liste des Formations Eco-it'
         ]);
     }
 }

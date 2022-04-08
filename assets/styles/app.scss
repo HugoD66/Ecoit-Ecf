@@ -5,6 +5,8 @@
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  overflow-y: hidden;
+
 }
 #back {
   z-index: -1;
@@ -16,8 +18,6 @@
   min-height: 100%;
   background-size: cover;
 }
-
-
 .container-fluid {
   display: flex;
   align-items: flex-start;
@@ -40,21 +40,14 @@
     text-shadow: 0px 0px 19px #ffffff;
   }
 }
-
-
 .navbar ul li a {
   color: #fff;
   text-transform: uppercase;
   font-size: 17px;
+  &:hover {
+    text-decoration: rgba(68, 136, 68, 0.90) underline 6px;
+  }
 }
-.hover-navbar:hover {
-  text-decoration: rgba(68, 136, 68, 0.90) underline 6px;
-}
-
-
-
-
-
 .content {
   width: 100%;
   position:absolute;
@@ -140,7 +133,6 @@ span {
   width: 100%;
   color: white;
 }
-
 .modal {
   color: #f2f1f1;
   .modal-content {
@@ -168,7 +160,6 @@ span {
     background-color: #2D5E0F;
   }
 }
-
 .titre-formation {
   text-decoration: underline  #20400b 8px;
   text-align: center;
@@ -178,11 +169,12 @@ span {
   color: white;
   text-shadow: 0 0 15px rgba(0, 0, 0, 0.5), 0 0 10px rgba(0, 0, 0, 0.5);
 }
-#contain-formation {
-  overflow-y: scroll;
+.container-list {
   position: relative;
-  width: 95%;
+  width: 90%;
   height: 60%;
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
 ::-webkit-scrollbar {
   width: 10px;
@@ -201,17 +193,14 @@ span {
   border-radius: 10px;
   background-color: transparent;
   color: white;
+  display: inline-block;
+  width: auto;
 }
 .titre-card {
   text-align: center;
   padding: 5px;
   margin-top: 12px;
   text-decoration: underline;
-}
-@media screen and (min-width: 575px ) {
-  .card {
-    width: 100%;
-  }
 }
 .connexion-form {
   z-index: 1;
@@ -247,4 +236,13 @@ span {
   display:flex;
   justify-content: center;
   padding: 20px;
+}
+
+
+
+
+@media screen and (min-width: 576px ) {
+  .card {
+    width: 100%;
+  }
 }

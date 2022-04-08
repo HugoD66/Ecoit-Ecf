@@ -15,31 +15,33 @@
   min-width: 100%;
   min-height: 100%;
   background-size: cover;
-
 }
+
+
 .container-fluid {
   display: flex;
   align-items: flex-start;
+  .logo {
+    width:135px;
+    height:135px;
+    filter: brightness(1.90);
+  }
+  #navbarsExample03 {
+    background: linear-gradient(198deg, rgba(2,0,36,1) 0%, rgba(68, 136, 68, 0.18) 1%, rgba(0,212,255,0) 100%);
+    border-radius: 20px;
+    height: 120px;
+    filter: brightness(1.90);
+  }
+  .navbar-toggler-icon {
+    background-color: rgba(68, 136, 68, 0.38)
+  }
+  .nav-item {
+    font-weight: 550;
+    text-shadow: 0px 0px 19px #ffffff;
+  }
 }
-.logo {
-  width:135px;
-  height:135px;
-  filter: brightness(1.90);
-}
-#navbarsExample03 {
-  background: linear-gradient(198deg, rgba(2,0,36,1) 0%, rgba(68, 136, 68, 0.18) 1%, rgba(0,212,255,0) 100%);
-  border-radius: 20px;
-  height: 120px;
-  filter: brightness(1.90);
 
-}
-.navbar-toggler-icon {
-  background-color: rgba(68, 136, 68, 0.38)
-}
-.nav-item {
-  font-weight: 550;
-  text-shadow: 0px 0px 19px #ffffff;
-}
+
 .navbar ul li a {
   color: #fff;
   text-transform: uppercase;
@@ -49,6 +51,10 @@
   text-decoration: rgba(68, 136, 68, 0.90) underline 6px;
 }
 
+
+
+
+
 .content {
   width: 100%;
   position:absolute;
@@ -56,28 +62,26 @@
   transform: translateY(-50%);
   text-align: center;
   color: white;
+  h1 {
+    font-size: 95px;
+    margin-top: 80px;
+    font-family: New Century Schoolbook, TeX Gyre Schola, serif;
+    color: white;
+    text-shadow: 0 0 15px rgba(0, 0, 0, 0.5), 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+  p {
+    color: #ffffff;
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 16px;
+    font-weight: bolder;
+    margin: 20px auto;
+    line-height: 25px;
+    text-shadow: 0px 0px 20px rgba(45, 188, 45, 0.9);}
 }
-.content h1 {
-  font-size: 95px;
-  margin-top: 80px;
-  font-family: New Century Schoolbook, TeX Gyre Schola, serif;
-  color: white;
-  text-shadow: 0 0 15px rgba(0, 0, 0, 0.5), 0 0 10px rgba(0, 0, 0, 0.5);
-}
-
-.content p {
-  color: #ffffff;
-  font-family: Verdana, Geneva, sans-serif;
-  font-size: 16px;
-  font-weight: bolder;
-  margin: 20px auto;
-  line-height: 25px;
-  text-shadow: 0px 0px 20px rgba(45, 188, 45, 0.9);}
 .button {
   width: 200px;
   padding: 15px 0;
   text-align: center;
-  margin: 20px 10px;
   border-radius: 25px;
   font-weight: bold;
   border: 2px solid #448844E5;
@@ -87,6 +91,16 @@
   position: relative;
   overflow: hidden;
   margin: 10px;
+    #enregistrement {
+      position: absolute;
+      height: 34px;
+    }
+  &:hover span{
+    width:100%;
+  }
+  &:hover {
+    border:none;
+  }
 }
 span {
   background: #448844E5;
@@ -99,22 +113,25 @@ span {
   z-index: -1;
   transition: 0.5s;
 }
-.button:hover span{
-  width:100%;
-}
-.button:hover {
-  border:none;
-}
 .footer section {
   position: absolute;
   bottom: 0;
   height:50px;
   width: 100%;
-}
-section .btn{
-  background-color: rgba(168, 80, 67, 0.55);
-  border-color: #2D5E0F;
-  color: rgba(168, 80, 67, 0.11);
+  .btn{
+    background-color: rgba(168, 80, 67, 0.55);
+    border-color: #2D5E0F;
+    color: rgba(168, 80, 67, 0.11);
+  }
+  img {
+    color: white;
+    margin: 10px;
+    -webkit-box-shadow: 0px 0px 20px 5px #2D5E0F;
+    box-shadow: 0px 0px 20px 5px #2D5E0F;
+    &:hover {
+      background-color: #3e8e41;
+    }
+  }
 }
 .contact {
   position: absolute;
@@ -123,39 +140,35 @@ section .btn{
   width: 100%;
   color: white;
 }
-.footer div img {
-  color: white;
-  margin: 10px;
-  -webkit-box-shadow: 0px 0px 20px 5px #2D5E0F;
-  box-shadow: 0px 0px 20px 5px #2D5E0F;
-}
+
 .modal {
   color: #f2f1f1;
+  .modal-content {
+    font-size: large;
+    font-family: Verdana, Geneva, sans-serif;
+    text-align: center;
+    border-color: #2D5E0F;
+    border-radius: 10px;
+  }
+  .back-modal {
+    position: fixed;
+    background-size: cover;
+    width: 498px;
+    height: 578px;
+  }
+  #titre-modal {
+    z-index:2;
+    font-size: xx-large;
+    font-family: New Century Schoolbook, TeX Gyre Schola, serif;
+  }
+  button {
+    border-radius: 12px;
+    border: 1px solid white;
+    color: whitesmoke;
+    background-color: #2D5E0F;
+  }
 }
-.modal-title {
-  font-size: xx-large;
-  font-family: New Century Schoolbook, TeX Gyre Schola, serif;
 
-}
-.back-modal {
-  position: fixed;
-  background-size: cover;
-  width: 498px;
-  height: 578px;
-}
-.modal-content {
-  font-size: large;
-  font-family: Verdana, Geneva, sans-serif;
-  text-align: center;
-  border-color: #2D5E0F;
-  border-radius: 10px;
-}
-.modal button {
-  border-radius: 12px;
-  border: 1px solid white;
-  color: whitesmoke;
-  background-color: #2D5E0F;
-}
 .titre-formation {
   text-decoration: underline  #20400b 8px;
   text-align: center;

@@ -1,12 +1,24 @@
 @import "custom";
 @import "~bootstrap/scss/bootstrap";
 
+
+
+$font-paragraph: Consolas, serif;
+$font-title: New  Bodoni MT , serif;
+$font-button: Century Gothic, sans-serif;
+
+$background-button: rgba(168, 80, 67, 0.67);
+$shadow-border-button:  0px 0px 20px 5px #386f0f;
+$border-color: #043704;
+$background-transparant: rgba(168, 80, 67, 0.33);
+$green-not-dark: 0px 0px 19px rgba(51, 172, 51, 0.99);
+
+
 * {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
   overflow-y: hidden;
-
 }
 #back {
   z-index: -1;
@@ -27,23 +39,22 @@
     filter: brightness(1.90);
   }
   #navbarsExample03 {
-    background: linear-gradient(198deg, rgba(2,0,36,1) 0%, rgba(68, 136, 68, 0.18) 1%, rgba(0,212,255,0) 100%);
+    background: linear-gradient(198deg, rgba(2,0,36,1) 0%, rgba(78, 167, 78, 0.18) 1%, rgba(0,212,255,0) 100%);
     border-radius: 20px;
     height: 120px;
     filter: brightness(1.90);
   }
-  .navbar-toggler-icon {
-    background-color: rgba(68, 136, 68, 0.38)
-  }
   .nav-item {
     font-weight: 550;
-    text-shadow: 0px 0px 19px #ffffff;
+    text-shadow: 0px 0px 19px rgba(61, 157, 61, 0.9);
+    filter: light(1.30);
   }
 }
 .navbar ul li a {
   color: #fff;
   text-transform: uppercase;
   font-size: 17px;
+  overflow-x: hidden;
   &:hover {
     text-decoration: rgba(68, 136, 68, 0.90) underline 6px;
   }
@@ -56,34 +67,40 @@
   text-align: center;
   color: white;
   h1 {
-    font-size: 95px;
+    font-size: 100px;
     margin-top: 80px;
-    font-family: New Century Schoolbook, TeX Gyre Schola, serif;
+    font-family: $font-title;
     color: white;
     text-shadow: 0 0 15px rgba(0, 0, 0, 0.5), 0 0 10px rgba(0, 0, 0, 0.5);
   }
   p {
     color: #ffffff;
-    font-family: Verdana, Geneva, sans-serif;
-    font-size: 16px;
-    font-weight: bolder;
+    font-family: $font-paragraph;
+    font-size: 18px;
     margin: 20px auto;
     line-height: 25px;
-    text-shadow: 0px 0px 20px rgba(45, 188, 45, 0.9);}
+    text-shadow: 0px 0px 20px rgba(11, 3, 3, 0.9);
+    filter: light(1.40);
+  }
 }
 .button {
   width: 200px;
   padding: 15px 0;
   text-align: center;
   border-radius: 25px;
-  font-weight: bold;
+  font-weight: bolder;
   border: 2px solid #448844E5;
   background: transparent;
+  text-decoration: underline;
   color: #fff;
   cursor: pointer;
   position: relative;
   overflow: hidden;
   margin: 10px;
+    a {
+      color: #DDDDDD;
+      font-weight: bolder;
+    }
     #enregistrement {
       position: absolute;
       height: 34px;
@@ -111,22 +128,25 @@ span {
   bottom: 0;
   height:50px;
   width: 100%;
+  font-family: $font-paragraph;
+
   .btn{
-    background-color: rgba(168, 80, 67, 0.55);
-    border-color: #2D5E0F;
+    background-color: $background-button;
+    border-color: $green-not-dark;
     color: rgba(168, 80, 67, 0.11);
   }
   img {
-    color: white;
+    color: $green-not-dark;
     margin: 10px;
-    -webkit-box-shadow: 0px 0px 20px 5px #2D5E0F;
-    box-shadow: 0px 0px 20px 5px #2D5E0F;
+    -webkit-box-shadow: $shadow-border-button;
+    box-shadow: $shadow-border-button;
     &:hover {
-      background-color: #3e8e41;
+      background-color: $green-not-dark;
     }
   }
 }
 .contact {
+  font-family: $font-title;
   position: absolute;
   bottom: 20px;
   height:50px;
@@ -134,13 +154,14 @@ span {
   color: white;
 }
 .modal {
-  color: #f2f1f1;
   .modal-content {
     font-size: large;
-    font-family: Verdana, Geneva, sans-serif;
+    font-family: $font-paragraph;
     text-align: center;
-    border-color: #2D5E0F;
+    border-color: $font-button;
     border-radius: 10px;
+    color: white;
+
   }
   .back-modal {
     position: fixed;
@@ -151,28 +172,28 @@ span {
   #titre-modal {
     z-index:2;
     font-size: xx-large;
-    font-family: New Century Schoolbook, TeX Gyre Schola, serif;
+    font-family: $font-title;
   }
   button {
     border-radius: 12px;
     border: 1px solid white;
     color: whitesmoke;
-    background-color: #2D5E0F;
+    background-color: $background-button;
   }
 }
 .titre-formation {
-  text-decoration: underline  #20400b 8px;
+  text-decoration: underline darkolivegreen 8px;
   text-align: center;
   margin: 15px;
   padding:10px;
-  font-family: New Century Schoolbook, TeX Gyre Schola, serif;
+  font-family: $font-title;
   color: white;
   text-shadow: 0 0 15px rgba(0, 0, 0, 0.5), 0 0 10px rgba(0, 0, 0, 0.5);
 }
 .container-list {
   position: relative;
   width: 90%;
-  height: 60%;
+  height: 68%;
   overflow-x: hidden;
   overflow-y: scroll;
 }
@@ -180,21 +201,21 @@ span {
   width: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: #20400b;
+  background: #5eb5e0;
 }
 ::-webkit-scrollbar-thumb {
   background: black;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #20400b;
+  background: #B0413E;
 }
 .card {
-  border: 2px solid #428813;
+  border: 2px solid $shadow-border-button;
   border-radius: 10px;
   background-color: transparent;
   color: white;
   display: inline-block;
-  width: auto;
+  font-family: $font-paragraph;
 }
 .titre-card {
   text-align: center;
@@ -208,11 +229,13 @@ span {
   top: auto;
   left: 23%;
   text-align: center;
-  /**background-color: rgba(168, 80, 67, 0.25);*/
-  height: 480px;
+  background-color: rgba(168, 80, 67, 0.25);
+  height: 64%;
   width: 55%;
+  font-family: $font-paragraph;
   justify-content: center;
   align-items: center;
+  margin-bottom: 43%;
   label {
       margin: 4%;
       text-align: center;
@@ -225,22 +248,34 @@ span {
       left: 7%;
       width: 85%;
       height: 34px;
-
     }
   .button {
-    margin-top: 10%;
+    margin-top: 5%;
     padding: 20px;
+    font-family:  $font-button;
   }
 }
 .premiere-visite {
+  font-family:  $font-button;
   display:flex;
   justify-content: center;
   padding: 20px;
+  align-items: center;
+  margin-bottom: 150px;
 }
-
-
-
-
+@media screen and (max-width: 576px ) {
+  .navbar {
+    position:relative;
+    #navbarsExample03 {
+    }
+    li {
+      display:block;
+      top: 0px;
+      right: 0px;
+      height: 35%;
+    }
+  }
+}
 @media screen and (min-width: 576px ) {
   .card {
     width: 100%;

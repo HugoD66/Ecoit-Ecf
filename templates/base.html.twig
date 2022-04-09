@@ -16,23 +16,27 @@
 </head>
 <body>
 <div class="back">
-    <img href="image/backgroundtest2.jpg" id="back" alt="Image de fond" src="image/backgroundtest.jpg">
+    <img href="image/backgroundtest2.jpg" id="back" alt="Image de fond" src="{{ asset('image/backgroundtest.jpg') }}">
     <nav class="navbar navbar-expand navbar-dark" aria-label="navbar">
         <div class="container-fluid">
-            <img class="logo" src="image/ECOIT-without-background.png" alt="Image de fond">
+            <img class="logo" src="{{ asset('image/ECOIT-without-background.png') }}" alt="Image de fond">
             <div class="collapse navbar-collapse justify-content-end" id="navbarsExample03">
                 <ul class="navbar-nav mb-2   mb-sm-0 navbar-left">
                     <li id="acceuilnav" class="nav-item col-sm p-2 m-4">
-                        <a class="nav-link " href="./">Acceuil</a>
+                        <a class="nav-link " href="{{ path('app_home') }}">Acceuil</a>
                     </li>
                     <li id="formationsnav" class="nav-item col-sm  p-2 m-4">
-                        <a class="nav-link " href="./formation">Liste des formations</a>
+                        <a class="nav-link " href="{{ path('app_formation') }}">Liste des formations</a>
                     </li>
                     <li id="planningnav" class="nav-item col-sm p-2 m-4">
-                        <a class="nav-link " href="https://www.google.com">Planning</a>
+                        <a class="nav-link " href="#">Planning</a>
                     </li>
                     <li id="loginnav" class="nav-item col-sm p-2 m-4">
-                        <a class="nav-link " href="./login">Se connecter</a>
+                            {% if  app.user is not null %}
+                                <a class="nav-link " href="{{ path('app_logout') }}"> Se déconnecter</a>
+                            {%  else %}
+                                <a class="nav-link " href="{{ path('app_login') }}"> Se connecter</a>
+                            {% endif %}
                     </li>
                 </ul>
             </div>
@@ -45,10 +49,10 @@
         <div class="contact col-md-4 d-flex  justify-content-center mb-3 mb-md-0 me-md-auto  text-decoration-none"><u>Nous contacter:</u></div>
         <div class="row">
             <section class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
-                <img class="btn btn-outline-light" src="image/facebook.svg" alt="facebook" role="button" href="https://www.facebook.com/LesVertsMoutons" onclick="window.open(this.href, '_blank'); return false;">
-                <img class="btn btn-outline-light" src="image/github.svg" alt="git" href="#!" role="button">
-                <img class="btn btn-outline-light" src="image/google.svg" alt="google" href="#!" role="button">
-                <img class="btn btn-outline-light" src="image/instagram.svg" alt="insta" role="button" href="https://www.instagram.com/?hl=fr" onclick="window.open(this.href, '_blank'); return false;">
+                <img class="btn btn-outline-light" src="{{ asset('image/facebook.svg') }}" alt="facebook" role="button" href="https://www.facebook.com/LesVertsMoutons" onclick="window.open(this.href, '_blank'); return false;">
+                <img class="btn btn-outline-light" src="{{ asset('image/github.svg') }}" alt="git" href="#!" role="button">
+                <img class="btn btn-outline-light" src="{{ asset('image/google.svg') }}" alt="google" href="#!" role="button">
+                <img class="btn btn-outline-light" src="{{ asset('image/instagram.svg') }}" alt="insta" role="button" href="https://www.instagram.com/?hl=fr" onclick="window.open(this.href, '_blank'); return false;">
             </section>
         </div>
     </div>
@@ -60,7 +64,7 @@
 <div class="modal  fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
-            <img class="back-modal" src="image/backfloote.jpg" alt="Image du modal">
+            <img class="back-modal" src="{{ asset('image/backfloote.jpg') }}" alt="Image du modal">
             <div class="modal-header">
                 <h5 class="modal-title" id="titre-modal">En savoir plus ...</h5>
             </div>
@@ -84,7 +88,7 @@
 <div class="modal fade" id="modalFormation" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
-            <img class="back-modal" src="image/liste-cour.jpg" alt="Image du modal-formation">
+            <img class="back-modal" src="{{ asset('image/liste-cour.jpg') }}" alt="Image du modal-formation">
             <div class="modal-header">
                 <h5 class="modal-title" id="titre-modal">Dernieres formations:</h5>
             </div>

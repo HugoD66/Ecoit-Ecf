@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello CantRegistryAgainController!{% endblock %}
+
+{% block body %}
+    <div class="content">
+        <h1>Eco-IT</h1>
+        <p>Vous êtes deja connecté, vous ne pouvez pas vous inscrire.</p>
+        <div>
+            <button class="button" type="button"><span></span><a href="{{ path('app_home') }}">RETOUR</a></button>
+        </div>
+        <img src="{{ asset('image/droitacces.png') }}" alt="Defense acces page"/>
+    </div>
+{% endblock %}

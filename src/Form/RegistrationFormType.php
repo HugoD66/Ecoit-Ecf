@@ -21,6 +21,8 @@ class RegistrationFormType extends AbstractType
             ->add('username', TextType::class)
             ->add('email')
             ->add('agreeTerms', CheckboxType::class, [
+                'required' => false,
+
                 'mapped' => false,
                 'constraints' => [
                     new IsTrue([
@@ -45,6 +47,7 @@ class RegistrationFormType extends AbstractType
                     ]),
                 ],
             ]);
+
     }
 
     public function configureOptions(OptionsResolver $resolver): void

@@ -10,6 +10,8 @@
         <button class="button" type="button"><span></span><a href="{{ url('app_postuler') }}">POSTULER</a></button>
         <button class="button" type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><span></span>EN SAVOIR PLUS</button>
         <button class="button" type="button"><span></span>DERNIERS COURS</button>
+        <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+
 
         <button class="button" type="button"><span></span><a href="
             {% if  app.user is not null %}

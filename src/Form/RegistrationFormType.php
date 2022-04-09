@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\User;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\ButtonType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -21,14 +22,15 @@ class RegistrationFormType extends AbstractType
             ->add('username', TextType::class)
             ->add('email')
             ->add('agreeTerms', CheckboxType::class, [
-                'required' => false,
-
                 'mapped' => false,
                 'constraints' => [
                     new IsTrue([
                         'message' => 'You should agree to our terms.',
                     ]),
                 ],
+            ])
+            ->add('save', ButtonType::class, [
+                'attr' => ['RegistrationFormTypes' => 'save'],
             ])
             ->add('plainPassword', PasswordType::class, [
                 // instead of being set onto the object directly,
@@ -47,7 +49,6 @@ class RegistrationFormType extends AbstractType
                     ]),
                 ],
             ]);
-
     }
 
     public function configureOptions(OptionsResolver $resolver): void

@@ -257,10 +257,12 @@ span {
 }
 #seconnecter {
   background-image: url("../../public/image/login-picture.jpg");
+  height: 620 px;
 }
 #sinscrire {
   background-image: url("../../public/image/liste-cour.jpg");
 }
+
 .premiere-visite {
   font-family:  $font-button;
   display:flex;
@@ -283,5 +285,13 @@ span {
 @media screen and (min-width: 576px ) {
   .card {
     width: 100%;
+  }
+}
+.container {
+  #gestion-postuler {
+    background-color: #5eb5e0;
+  }
+  #table-users {
+    background-color: green;
   }
 }

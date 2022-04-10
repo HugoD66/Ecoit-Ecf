@@ -1,8 +1,6 @@
 @import "custom";
 @import "~bootstrap/scss/bootstrap";
 
-
-
 $font-paragraph: Consolas, serif;
 $font-title: New  Bodoni MT , serif;
 $font-button: Century Gothic, sans-serif;
@@ -12,7 +10,6 @@ $shadow-border-button:  0px 0px 20px 5px #386f0f;
 $border-color: #043704;
 $background-transparant: rgba(168, 80, 67, 0.33);
 $green-not-dark: 0px 0px 19px rgba(51, 172, 51, 0.99);
-
 
 * {
   margin: 0;
@@ -47,11 +44,12 @@ $green-not-dark: 0px 0px 19px rgba(51, 172, 51, 0.99);
   .nav-item {
     font-weight: 550;
     text-shadow: 0px 0px 19px rgba(61, 157, 61, 0.9);
-    filter: light(1.30);
+    filter: light(1.9);
   }
 }
+
 .navbar ul li a {
-  color: #fff;
+  color: #45c6b2;
   text-transform: uppercase;
   font-size: 17px;
   overflow-x: hidden;
@@ -123,7 +121,6 @@ span {
   z-index: -1;
   transition: 0.5s;
 }
-
 .footer section {
   position: absolute;
   bottom: 0;
@@ -172,8 +169,7 @@ span {
     border-color: $font-button;
     border-radius: 10px;
     color: white;
-
-  }
+}
   .back-modal {
     position: fixed;
     background-size: cover;
@@ -305,9 +301,19 @@ span {
 }
 
 
-
-
 .container {
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+  #salut1 {
+    background-color: #386f0f;
+  }
+  #salut2 {
+    background-color: azure;
+  }
+  #salut3 {
+    background-color: darkcyan;
+  }
   #gestion-postuler {
     background-color: #5eb5e0;
   }

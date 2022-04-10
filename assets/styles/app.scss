@@ -82,8 +82,6 @@ $green-not-dark: 0px 0px 19px rgba(51, 172, 51, 0.99);
     text-shadow: 0px 0px 20px rgba(11, 3, 3, 0.9);
     filter: light(1.40);
   }
-
-
 }
 .button {
   width: 200px;
@@ -125,6 +123,7 @@ span {
   z-index: -1;
   transition: 0.5s;
 }
+
 .footer section {
   position: absolute;
   bottom: 0;
@@ -147,6 +146,12 @@ span {
     }
   }
 }
+#connecteentemps {
+  font-size: 28px;
+  color: greenyellow;
+  font-family: $font-button;
+  text-align: end;
+}
 .contact {
   font-family: $font-title;
   position: absolute;
@@ -154,6 +159,10 @@ span {
   height:50px;
   width: 100%;
   color: white;
+  .image.congrats {
+    height:20%;
+    width:20%;
+  }
 }
 .modal {
   .modal-content {
@@ -192,24 +201,17 @@ span {
   color: white;
   text-shadow: 0 0 15px rgba(0, 0, 0, 0.5), 0 0 10px rgba(0, 0, 0, 0.5);
 }
-.container-list {
-  position: relative;
-  width: 90%;
-  height: 68%;
-  overflow-x: hidden;
-  overflow-y: scroll;
-}
 ::-webkit-scrollbar {
   width: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: #5eb5e0;
+  background: $border-color;
 }
 ::-webkit-scrollbar-thumb {
-  background: black;
+  background: $background-button;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #B0413E;
+  background: rgba(0, 0, 0, 0.69);
 }
 .card {
   border: 2px solid $shadow-border-button;
@@ -236,10 +238,8 @@ span {
   font-family: $font-paragraph;
   justify-content: center;
   margin-bottom: 43%;
-
   label {
       margin: 4%;
-
       font-size: 28px;
       color: black;
     }
@@ -255,14 +255,30 @@ span {
     font-family:  $font-button;
   }
 }
+#formation {
+  position: relative;
+  width: 90%;
+  overflow-y: auto;
+  max-height: 1020px;
+  scroll-margin-block: 10px;
+  margin-bottom: 80px;
+}
 #seconnecter {
   background-image: url("../../public/image/login-picture.jpg");
-  height: 620 px;
+  max-height: 950px;
+  overflow-y: auto;
+  scroll-margin-block: 10px;
+}
+#postuler {
+  position: relative;
+  background-color: #DDDDDD ;
+  overflow-y: scroll;
+  max-height: 1020px;
+  scroll-margin-block: 10px;
 }
 #sinscrire {
   background-image: url("../../public/image/liste-cour.jpg");
 }
-
 .premiere-visite {
   font-family:  $font-button;
   display:flex;
@@ -287,6 +303,10 @@ span {
     width: 100%;
   }
 }
+
+
+
+
 .container {
   #gestion-postuler {
     background-color: #5eb5e0;

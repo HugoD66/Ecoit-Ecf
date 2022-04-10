@@ -49,11 +49,17 @@
         <div class="contact col-md-4 d-flex  justify-content-center mb-3 mb-md-0 me-md-auto  text-decoration-none"><u>Nous contacter:</u></div>
         <div class="row">
             <section class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
-                <img class="btn btn-outline-light" src="{{ asset('image/facebook.svg') }}" alt="facebook" role="button" href="https://www.facebook.com/LesVertsMoutons" onclick="window.open(this.href, '_blank'); return false;">
+                <img class="btn btn-outline-light" src="{{ asset('image/facebook.svg') }}" alt="facebook" role="button" href="https://www.facebook.com/LesVertsMoutons">
                 <img class="btn btn-outline-light" src="{{ asset('image/github.svg') }}" alt="git" href="#!" role="button">
                 <img class="btn btn-outline-light" src="{{ asset('image/google.svg') }}" alt="google" href="#!" role="button">
-                <img class="btn btn-outline-light" src="{{ asset('image/instagram.svg') }}" alt="insta" role="button" href="https://www.instagram.com/?hl=fr" onclick="window.open(this.href, '_blank'); return false;">
+                <img class="btn btn-outline-light" src="{{ asset('image/instagram.svg') }}" alt="insta" role="button" href="https://www.instagram.com/?hl=fr">
+                {% if app.user %}
+                    <div class="mb-3" id="connecteentemps">
+                        You are logged in as {{ app.user.username }}.
+                    </div>
+                {% endif %}
             </section>
+
         </div>
     </div>
 </div>
@@ -126,5 +132,5 @@
             </div>
         </div>
     </div>
-</div
+</div>
 </html>

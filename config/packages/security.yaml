@@ -52,7 +52,7 @@ security:
     access_control:
         # - { path: ^/admin, roles: ROLE_SUPER_ADMIN }
         - { path: ^/profile, roles: ROLE_USER }
-        - { path: ^/formation, roles: ROLE_ADMIN }
+        # - { path: ^/formation, roles: ROLE_ADMIN }
 
 
 when@test:

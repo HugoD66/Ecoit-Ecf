@@ -1,6 +1,7 @@
 {% extends 'base.html.twig' %}
-{% block title %}{% endblock %}
+{% block title %}{{ title }}{% endblock %}
 {% block body %}
+
 <div class="content">
     <h1>Eco-IT</h1>
     <p>C’est un fait, la <i>crise écologique</i> est devenue une urgence majeure. La sixième extinction
@@ -9,12 +10,8 @@
     <div>
         <button class="button" type="button"><span></span><a href="{{ url('app_postuler') }}">POSTULER</a></button>
         <button class="button" type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><span></span>EN SAVOIR PLUS</button>
-
-
         <button class="button" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"><span></span>DERNIERS COURS</button>
         <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
-
-
         <button class="button" type="button"><span></span><a href="
             {% if  app.user is not null %}
                 {{ path('app_cant_registry_again') }}

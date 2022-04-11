@@ -4,11 +4,10 @@ namespace App\Form;
 
 use App\Entity\User;
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class PostulerFormType extends AbstractType
+class PostulerType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
@@ -23,8 +22,6 @@ class PostulerFormType extends AbstractType
             ->add('picture')
             ->add('validate')
             ->add('isVerified')
-            ->add('save', SubmitType::class, ['label' => 'Soumettre'])
-
         ;
     }
 

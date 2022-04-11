@@ -3,47 +3,30 @@
 namespace App\Controller;
 
 use App\Entity\User;
-use App\Form\PostulerFormType;
-use Doctrine\ORM\EntityManagerInterface;
+use App\Form\PostulerType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\Form\FormTypeInterface;
 
 class PostulerController extends AbstractController
 {
     #[Route('/postuler', name: 'app_postuler')]
-    public function register(Request $request, UserPasswordHasherInterface $userPasswordHasher, EntityManagerInterface $entityManager): Response
+    public function new(Request $request): Response
     {
-    $user = new User();
-    $form = $this->createForm(PostulerFormType::class, $user);
+        $user = new User();
+        $form = $this->createForm(PostulerType::class, $user);
+
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
-            // $form->getData() holds the submitted values
-            // but, the original `$task` variable has also been updated
-            $user = $form->getData();
-            // encode the plain password
-            $user->setPassword(
-                $user->hashPassword(
-                    $user,
-                    $form->get('plainPassword')->getData()
-                )
-            );
-            $entityManager->persist($user);
-            $entityManager->flush();
-            // ... perform some action, such as saving the task to the database
-            return $this->redirectToRoute('app_home');
+            $task = $form->getData();
+
+            return $this->redirectToRoute('postulerSucces');
         }
-        return $this->render('postuler/postuler.html.twig', [
-            'form' => $this->createFormBuilder(User::class),
-            'title' => 'Postuler pour EcoIT',
+
+
+        return $this->render('security/postuler.html.twig', [
+            'form' => $form,
         ]);
     }
 }
-
-/**
- *             'registrationForm' => $form->createView(),
-
- */

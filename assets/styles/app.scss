@@ -117,6 +117,7 @@ span {
   transition: 0.5s;
 }
 .footer section {
+  overflow-x: hidden;
   position: absolute;
   bottom: 0;
   height:50px;
@@ -131,15 +132,6 @@ span {
     color: $green-not-dark;
     margin: 10px;
     }
-}
-
-#connecteentemps {
-  font-size: 28px;
-  color: greenyellow;
-  font-family: $font-button;
-  position: absolute;
-  right: 0;
-  bottom: 0;
 }
 .contact {
   font-family: $font-title;
@@ -259,12 +251,7 @@ span {
   scroll-margin-block: 10px;
   margin-bottom: 80px;
 }
-.postuler-form {
-  background-color: rgba(188,76,63,0.29);
-  margin-left: auto;
-  margin-right: auto;
-  width: 90%;
-}
+
 
 
 
@@ -340,7 +327,7 @@ span {
 }
 @media screen and (max-width: 576px ) {
   .nav-item {
-    transform: rotate(90deg);
+    transform: rotate(45deg);
   }
    #navbarsExample03 {
      height: 250px;
@@ -350,6 +337,29 @@ span {
   .card {
     width: 100%;
   }
+}
+@media screen and (min-width: 980px) {
+  #button-reglage {
+    border-radius: 75px;
+    border: 4px solid $border-color;
+  }
+}
+#button-reglage {
+  z-index: 3;
+  width:150px;
+  height: 150px;
+  position: fixed;
+  padding: 4px 4px 4px 4px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+#connecteentemps {
+
+  font-size: 28px;
+  color: $border-color;
+  font-weight: bold;
+  font-family: $font-paragraph;
 }
 
 
@@ -408,4 +418,12 @@ span {
   overflow-y: scroll;
   max-height: 1020px;
   scroll-margin-block: 10px;
+
+
+  .postuler-form {
+  background-color: rgba(188,76,63,0.29);
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+}
 } */

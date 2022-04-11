@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello PostulerSuccesController!{% endblock %}
+
+{% block body %}
+    <div class="content">
+        <h1>Eco-IT</h1>
+        <p>Vous avez réussit</p>
+        <div>
+            <button class="button" type="button"><span></span><a href="{{ path('app_home') }}">Redirection Acceuil</a></button>
+        </div>
+        <img src="{{ asset('image/congrats.png') }}" alt="Defense acces page"/>
+    </div>
+
+
+{% endblock %}

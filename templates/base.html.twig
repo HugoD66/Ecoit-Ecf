@@ -5,23 +5,21 @@
     <title>{% block title %}Page d'acceuil-ECOIT{% endblock %}</title>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-
     {% block stylesheets %}
         {{ encore_entry_link_tags('app') }}
     {% endblock %}
     {% block javascripts %}
         {{ encore_entry_script_tags('app') }}
     {% endblock %}
-
 </head>
 <body>
 <div class="back">
-    <img href="image/backgroundtest2.jpg" id="back" alt="Image de fond" src="{{ asset('image/backgroundtest.jpg') }}">
-    <nav class="navbar navbar-expand navbar-dark" aria-label="navbar">
+    <img href="image/backgroundtest2.jpg" id="back" alt="Image de fond" src="{{ asset('image/test-back8.jpg') }}">
+    <nav class="navbar navbar-expand " aria-label="navbar">
         <div class="container-fluid">
             <img class="logo" src="{{ asset('image/ECOIT-without-background.png') }}" alt="Image de fond">
             <div class="collapse navbar-collapse justify-content-end" id="navbarsExample03">
-                <ul class="navbar-nav mb-2   mb-sm-0 navbar-left">
+                <ul class="navbar-nav    mb-sm-0 navbar-left">
                     <li id="acceuilnav" class="nav-item col-sm p-2 m-4">
                         <a class="nav-link " href="{{ path('app_home') }}">Acceuil</a>
                     </li>
@@ -67,7 +65,7 @@
 
 
 
-<div class="modal  fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<div class="modal  fade" id="staticBackdrop" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <img class="back-modal" src="{{ asset('image/backfloote.jpg') }}" alt="Image du modal">
@@ -91,46 +89,50 @@
     </div>
 </div>
 
-<div class="modal fade" id="modalFormation" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-            <img class="back-modal" src="{{ asset('image/liste-cour.jpg') }}" alt="Image du modal-formation">
+<div class="modal fade" id="exampleModal" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content" id="modal2">
             <div class="modal-header">
-                <h5 class="modal-title" id="titre-modal">Dernieres formations:</h5>
-            </div>
-            <div class="modal-body">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-md-4">.col-md-4</div>
-                        <div class="col-md-4">.col-md-4</div>
-                        <div class="col-md-4">.col-md-4</div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn" data-bs-dismiss="modal">Retour Acceuil</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <h5 class="modal-title" id="titre-modal">Dernieres formations disponibles:</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                ...
+                <div class="row">
+                    <div class="card">
+                        <div class="titre-card"> <h4>Titre cour </h4> </div>
+                        <img class="card-img-top" src="https://dummyimage.com/600x400/000/fff" alt="Card image cap">
+                        <div class="card-body">
+                            <p class="card-text">Vel aliquid modi ut sapiente recusandae aut quisquam nobis ut ipsam quae et corporis autem. Sed omnis harum vel quam voluptate qui impedit magnam aut magnam dolorem ea minus quaerat et velit vero et quos officiis!.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="card">
+                        <div class="titre-card"> <h4>Titre cour </h4> </div>
+                        <img class="card-img-top" src="https://dummyimage.com/600x400/000/fff" alt="Card image cap">
+                        <div class="card-body">
+                            <p class="card-text">Vel aliquid modi ut sapiente recusandae aut quisquam nobis ut ipsam quae et corporis autem. Sed omnis harum vel quam voluptate qui impedit magnam aut magnam dolorem ea minus quaerat et velit vero et quos officiis!.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="card">
+                        <div class="titre-card"> <h4>Titre cour </h4> </div>
+                        <img class="card-img-top" src="https://dummyimage.com/600x400/000/fff" alt="Card image cap">
+                        <div class="card-body">
+                            <p class="card-text">Vel aliquid modi ut sapiente recusandae aut quisquam nobis ut ipsam quae et corporis autem. Sed omnis harum vel quam voluptate qui impedit magnam aut magnam dolorem ea minus quaerat et velit vero et quos officiis!.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
+                <button type="button" class="btn" data-bs-dismiss="modal">Retour Acceuil</button>
             </div>
         </div>
     </div>
 </div>
+
+
 </html>

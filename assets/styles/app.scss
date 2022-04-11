@@ -267,18 +267,27 @@ span {
 
 
 
-
-
-.contain-register {
+.postuler-form {
+  background-color: rgba(188,76,63,0.29);
   margin-left: auto;
   margin-right: auto;
-  background-image: url("../../public/image/test-back4.jpg");
+}
+
+.contain-register {
+  background-color: rgba(188,76,63,0.29);
+  margin-left: auto;
+  margin-right: auto;
+
   background-repeat: no-repeat;
   vertical-align:middle;
-  width:100%;
-
+  width:80%;
   .col {
     font-size: 25px;
+  }
+  div {
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
   }
   #carethermes {
     text-align: center;
@@ -307,13 +316,7 @@ span {
   overflow-y: auto;
   scroll-margin-block: 10px;
 }
-#postuler {
-  position: relative;
-  background-color: #DDDDDD ;
-  overflow-y: scroll;
-  max-height: 1020px;
-  scroll-margin-block: 10px;
-}
+
 #sinscrire {
   background-image: url("../../public/image/liste-cour.jpg");
 }
@@ -324,16 +327,12 @@ span {
   align-items: center;
 }
 @media screen and (max-width: 576px ) {
-  .navbar {
-    position:relative;
-    #navbarsExample03 {
-    }
-    li {
-      display:block;
-      top: 0px;
-      right: 0px;
-      height: 35%;
-    }
+  .nav-item {
+    transform: rotate(90deg);
+  }
+   #navbarsExample03 {
+     height: 250px;
+
   }
 }
 @media screen and (min-width: 576px ) {
@@ -367,4 +366,12 @@ span {
       position: absolute;
       height: 34px;
     }
- */
+
+
+#postuler {
+  position: relative;
+  background-color: #DDDDDD ;
+  overflow-y: scroll;
+  max-height: 1020px;
+  scroll-margin-block: 10px;
+} */

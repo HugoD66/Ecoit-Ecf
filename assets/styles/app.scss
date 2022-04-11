@@ -137,7 +137,9 @@ span {
   font-size: 28px;
   color: greenyellow;
   font-family: $font-button;
-  text-align: end;
+  position: absolute;
+  right: 0;
+  bottom: 0;
 }
 .contact {
   font-family: $font-title;
@@ -257,21 +259,31 @@ span {
   scroll-margin-block: 10px;
   margin-bottom: 80px;
 }
-
-
-
-
-
-
-
-
-
-
 .postuler-form {
   background-color: rgba(188,76,63,0.29);
   margin-left: auto;
   margin-right: auto;
+  width: 90%;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .contain-register {
   background-color: rgba(188,76,63,0.29);
@@ -332,7 +344,6 @@ span {
   }
    #navbarsExample03 {
      height: 250px;
-
   }
 }
 @media screen and (min-width: 576px ) {
@@ -340,6 +351,29 @@ span {
     width: 100%;
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .container {
   margin-left: auto;
   margin-right: auto;

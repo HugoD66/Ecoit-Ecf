@@ -58,6 +58,7 @@ class RegistrationController extends AbstractController
             'registrationForm' => $form->createView(),
             'title' => 'Enregistrement - EcoIT',
         ]);
+
     }
     #[Route('/verify/email', name: 'app_verify_email')]
     public function verifyUserEmail(Request $request, TranslatorInterface $translator): Response

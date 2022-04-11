@@ -11,7 +11,7 @@ class CreateFormController extends AbstractController
     #[Route('/createform', name: 'app_createform')]
     public function index(): Response
     {
-        return $this->render('formation/createForm.html.twig', [
+        return $this->render('formation/createForm.htlm.twig', [
             'title' => 'Creation de Formation EcoIT'
         ]);
     }

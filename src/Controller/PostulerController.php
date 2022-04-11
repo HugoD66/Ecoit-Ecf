@@ -36,9 +36,14 @@ class PostulerController extends AbstractController
             // ... perform some action, such as saving the task to the database
             return $this->redirectToRoute('app_home');
         }
-        return $this->render('postuler/createForm.html.twig', [
+        return $this->render('postuler/postuler.html.twig', [
             'form' => $this->createFormBuilder(User::class),
             'title' => 'Postuler pour EcoIT',
         ]);
     }
 }
+
+/**
+ *             'registrationForm' => $form->createView(),
+
+ */

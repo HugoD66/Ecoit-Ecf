@@ -16,8 +16,9 @@ security:
         backend_users:
             memory:
                 users:
-                    azjarbara: { password: '$2azrazrazrxc ... IuqDju', roles: [ 'ROLE_ADMIN' ] }
-                    azrarzar: { password: '$2azrazrazrrzai1I ... rGwXCZ', roles: [ 'ROLE_ADMIN', 'ROLE_SUPER_ADMIN' ] }
+                    user: { password: '$2y$13$8pXXmKQ23hg71qqxg/SKyOOkC4g.wX/YE5AH73k.Bn.K2MZFthBbC', roles: ['ROLE_USER'] }
+                    teatcher: { password: '$2y$13$0JaBtqdcIPXP3gocJM//vub5079OPgVrBfExIw1C0wdCdiLilDPI2', roles: ['ROLE_TEATCHER'] }
+                    admin: { password: '$2y$13$3ewcHqG6QWLjjGHDCQtw0Oeb3Y7tQBGzdS.PtfhQPYNZ3T/nVXAhK', roles : [ 'ROLE_ADMIN', 'ROLE_SUPER_ADMIN' ] }
 
     firewalls:
         dev:
@@ -50,12 +51,11 @@ security:
     # Easy way to control access for large sections of your site
     # Note: Only the *first* access control that matches will be used
     access_control:
-        # - { path: ^/formation, roles: ROLE_USER }
-        #- { path: ^/createform, roles: ROLE_TEATCHER }
-        #- { path: ^/admin, roles: ROLE_SUPER_ADMIN }
-        #- { path: ^/, roles:  }
-        #- { path: ^/, roles:  }
-
+         - { path: ^/formation, roles: ROLE_USER }
+         - { path: ^/createform, roles: ROLE_TEATCHER }
+         - { path: ^/admin, roles: ROLE_SUPER_ADMIN }
+         - { path: ^/teatcher, roles: ROLE_TEATCHER  }
+         - { path: ^/usergestion, roles: ROLE_USER  }
 
 when@test:
     security:

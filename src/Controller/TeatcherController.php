@@ -6,16 +6,13 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class HomeController extends AbstractController
+class TeatcherController extends AbstractController
 {
-    #[Route('/', name: 'app_home')]
+    #[Route('/teatcher', name: 'app_teatcher')]
     public function index(): Response
     {
-        return $this->render('home/teatcher.html.twig', [
-            'title' => 'Page d\'acceuil Eco IT'
+        return $this->render('gestion/teatcher.html.twig', [
+            'controller_name' => 'TeatcherController',
         ]);
     }
 }
-
-
-

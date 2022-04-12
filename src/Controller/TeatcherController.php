@@ -11,6 +11,8 @@ class TeatcherController extends AbstractController
     #[Route('/teatcher', name: 'app_teatcher')]
     public function index(): Response
     {
+
+        dd($this->getUser());
         return $this->render('gestion/teatcher.html.twig', [
             'controller_name' => 'TeatcherController',
         ]);

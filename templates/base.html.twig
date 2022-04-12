@@ -20,17 +20,19 @@
             <img class="logo" src="{{ asset('image/ECOIT-without-background.png') }}" alt="Image de fond">
             <div class="collapse navbar-collapse justify-content-end" id="navbarsExample03">
                 <ul class="navbar-nav    mb-sm-0 navbar-left">
+
+
                     <li id="acceuilnav" class="nav-item col-sm p-2 m-4">
                         <a class="nav-link " href="{{ path('app_home') }}">Acceuil</a>
                     </li>
                     <li id="formationsnav" class="nav-item col-sm  p-2 m-4">
-                        <a class="nav-link " href="{{ path('app_formation') }}">Liste des formations</a>
+                        <a class="nav-link " href="{{ path('app_formation') }}">Formations</a>
                     </li>
                     <li id="loginnav" class="nav-item col-sm p-2 m-4">
                             {% if  app.user is not null %}
-                                <a class="nav-link " href="{{ path('app_logout') }}"> Se déconnecter</a>
+                                <a class="nav-link " href="{{ path('app_logout') }}">Déconnexion</a>
                             {%  else %}
-                                <a class="nav-link " href="{{ path('app_login') }}"> Se connecter</a>
+                                <a class="nav-link " href="{{ path('app_login') }}">Connexion</a>
                             {% endif %}
                     </li>
                 </ul>
@@ -56,6 +58,21 @@
                     <img class="btn btn-outline-light" src="{{ asset('image/instagram.svg') }}" alt="insta">
                 </a>
 
+                {% if is_granted('ROLE_ADMIN') %}
+                    <a href="{{ path('app_admin_gestion') }}}">
+                        <img class src="{{ asset('image/gestion.png') }}" alt="gestion" role="button" id="button-reglage">
+                    </a>
+                {% endif %}
+                {% if is_granted('ROLE_TEATCHER') %}
+                    <a href="{{ path('app_teatcher') }}">
+                        <img class src="{{ asset('image/gestion.png') }}" alt="gestion" role="button" id="button-reglage">
+                    </a>
+                {% endif %}
+                {% if is_granted('ROLE_USER') %}
+                    <a href="{{ path('app_user_gestion') }}">
+                        <img class src="{{ asset('image/gestion.png') }}" alt="gestion" role="button" id="button-reglage">
+                    </a>
+                {% endif %}
             </section>
         </div>
     </div>

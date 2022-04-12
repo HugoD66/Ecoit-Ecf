@@ -14,6 +14,7 @@ class PostulerController extends AbstractController
     #[Route('/postuler', name: 'app_postuler')]
     public function new(Request $request): Response
     {
+
         $user = new User();
         $form = $this->createForm(PostulerType::class, $user);
 
@@ -26,7 +27,7 @@ class PostulerController extends AbstractController
 
 
         return $this->render('security/postuler.html.twig', [
-            'form' => $form,
+            'form' => $form->createView(),
         ]);
     }
 }

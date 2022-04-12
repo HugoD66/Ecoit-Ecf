@@ -3,6 +3,7 @@
 {% block title %}Hello PostulerController!{% endblock %}
 
 {% block body %}
-    {{ form(form) }}
-
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+    {{ form_end(form) }}
 {% endblock %}

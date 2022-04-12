@@ -17,3 +17,25 @@ app_logout:
 kernel:
     resource: ../src/Kernel.php
     type: annotation
+
+
+
+formation_add:
+    path: /add
+    controller: App\Controller\CreateFormController::index
+
+formation_show:
+    path: /show/{url}
+    controller: App\Controller\CreateFormController::show
+
+formation_edit:
+    path: /edit/{id}
+    controller: App\Controller\CreateFormController::edit
+    requirements:
+        id: '\d+'
+
+formation_remove:
+    path: /remove/{id}
+    controller: App\Controller\CreateFormController::remove
+    requirements:
+        id: '\d+'

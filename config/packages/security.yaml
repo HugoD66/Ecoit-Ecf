@@ -51,11 +51,11 @@ security:
     # Easy way to control access for large sections of your site
     # Note: Only the *first* access control that matches will be used
     access_control:
-         - { path: ^/formation, roles: ROLE_USER }
+         #- { path: ^/formation, roles: ROLE_USER }
          # - { path: ^/createform, roles: ROLE_TEATCHER }
-         - { path: ^/admin, roles: ROLE_SUPER_ADMIN }
-         - { path: ^/teatcher, roles: ROLE_TEATCHER  }
-         - { path: ^/usergestion, roles: ROLE_USER  }
+         #- { path: ^/admin, roles: ROLE_SUPER_ADMIN }
+         #- { path: ^/teatcher, roles: ROLE_TEATCHER  }
+         #- { path: ^/usergestion, roles: ROLE_USER  }
 
 when@test:
     security:

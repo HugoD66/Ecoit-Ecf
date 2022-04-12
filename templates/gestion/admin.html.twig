@@ -1,16 +1,56 @@
 {% extends 'base.html.twig' %}
 {% block title %}{{ title }}{% endblock %}
+
 {% block body %}
-    <div class="titre-formation"><h1>{{ title }}</h1></div>
-        <div class="container">
-            <div class="row">
-                <div class="col-sm" id="gestion-postuler">
-                    One of three columns
-                </div>
-                <div class="col-sm" id="table-users">
-                    One of three columns
-                </div>
+
+<div class="titre-formation"><h1>{{ title }}</h1></div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col" id="reglage-buttons">
+                    <button class="button" type="button"><span></span><a href="{{ url('app_formation') }}">Liste des formations</a></button>
+            </div>
+            <div class="col" id="reglage-buttons">
+                    <button class="button" type="button"><span></span><a href="{{ url('app_home') }}">Acceuil</a></button>
             </div>
         </div>
 
+
+
+
+        <div class="row rowgestion">
+            <div class="col-12 col-lg-6">
+                <div class="panneau-gauche">
+                    <h3>Postulation recues :</h3>
+                    <ul>
+                        <li>Naztyarzeereryyrr : </li>
+                        <li>Naztyarzeereryyrr : </li>
+                        <li>Naztyarzeereryyrr : </li>
+                        <li>Naztyarzeereryyrr : </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-12 col-lg-6">
+                <div class="panneau-droit">
+                    <h3>Vous êtes connecté en temps que : </h3>
+                        <ul>
+                            <li>Nom d'utilisateur : </li>
+                            <li>Email de l'utilisateur : </li>
+                            <li>Poste de l'utilisateur : </li>
+                        </ul>
+                    <h3>Statistiques de l'application </h3>
+                        <ul>
+                            <li>Nombre de personnes inscrites : </li>
+                            <li>Nombre de personnes connectées : </li>
+                            <li>Nombre de professeurs :  </li>
+
+                        </ul>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 {% endblock %}
+

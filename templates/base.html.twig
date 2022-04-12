@@ -20,15 +20,13 @@
             <img class="logo" src="{{ asset('image/ECOIT-without-background.png') }}" alt="Image de fond">
             <div class="collapse navbar-collapse justify-content-end" id="navbarsExample03">
                 <ul class="navbar-nav    mb-sm-0 navbar-left">
-
-
-                    <li id="acceuilnav" class="nav-item col-sm p-2 m-4">
+                    <li id="acceuilnav" class="nav-item col-sm m-1 p-2 ">
                         <a class="nav-link " href="{{ path('app_home') }}">Acceuil</a>
                     </li>
-                    <li id="formationsnav" class="nav-item col-sm  p-2 m-4">
-                        <a class="nav-link " href="{{ path('app_formation') }}">Formations</a>
+                    <li id="formationsnav" class="nav-item col-sm m-1 p-2 ">
+                        <a class="nav-link " href="{{ path('app_formation') }}">Formation</a>
                     </li>
-                    <li id="loginnav" class="nav-item col-sm p-2 m-4">
+                    <li id="loginnav" class="nav-item col-sm m-1 p-2 ">
                             {% if  app.user is not null %}
                                 <a class="nav-link " href="{{ path('app_logout') }}">Déconnexion</a>
                             {%  else %}

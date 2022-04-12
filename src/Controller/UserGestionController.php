@@ -15,7 +15,7 @@ class UserGestionController extends AbstractController
     {
 
         return $this->render('gestion/usergestion.html.twig', [
-
+            'title' => 'Page de gestion Utilisateur'
             ]);
     }
 }

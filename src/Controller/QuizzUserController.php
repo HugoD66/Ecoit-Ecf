@@ -6,14 +6,12 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class TeatcherController extends AbstractController
+class QuizzUserController extends AbstractController
 {
-    #[Route('/teatcher', name: 'app_teatcher')]
+    #[Route('/quizzuser', name: 'app_quizz_user')]
     public function index(): Response
     {
-
-        return $this->render('gestion/teatcher.html.twig', [
-            'title' => 'Page gestion professeur EcoIT',
+        return $this->render('formation/quizzuser.html.twig', [
         ]);
     }
 }

@@ -7,7 +7,6 @@ framework:
         #auto_mapping:
         #    App\Entity\: []
 
-
 when@test:
     framework:
         validation:

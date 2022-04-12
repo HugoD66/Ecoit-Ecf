@@ -43,19 +43,24 @@
         <div class="contact col-md-4 d-flex  justify-content-center mb-3 mb-md-0"><u>Nous contacter:</u></div>
         <div class="row">
             <section class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto">
-                <a><img class="btn btn-outline-light" src="{{ asset('image/facebook.svg') }}" alt="facebook" role="button" href="http://www.google.com"></a>
-                <a><img class="btn btn-outline-light" src="{{ asset('image/github.svg') }}" alt="git" href="https://github.com/HugoD66/Ecoit-Ecf.git" role="button"></a>
-                <a><img class="btn btn-outline-light" src="{{ asset('image/google.svg') }}" alt="google" href="" role="button"></a>
-                <a><img class="btn btn-outline-light" src="{{ asset('image/instagram.svg') }}" alt="insta" role="button" href="https://www.instagram.com/?hl=fr"></a>
-                <div class="row">
+                <a href="http://www.google.com">
+                    <img class="btn btn-outline-light" src="{{ asset('image/facebook.svg') }}" alt="facebook">
+                </a>
+                <a href="http://www.google.com">
+                    <img class="btn btn-outline-light" src="{{ asset('image/github.svg') }}" alt="git">
+                </a>
+                <a href="http://www.google.com">
+                    <img class="btn btn-outline-light" src="{{ asset('image/google.svg') }}" alt="google">
+                </a>
+                <a href="http://www.google.com">
+                    <img class="btn btn-outline-light" src="{{ asset('image/instagram.svg') }}" alt="insta">
+                </a>
                     <img class src="{{ asset('image/gestion.png') }}" alt="gestion" role="button" id="button-reglage"
                                          {% if  app.user is not null %}
                                  href="https://www.google.com/search?q=aze&rlz=1C1ONGR_frFR996FR996&oq=aze&aqs=chrome..69i57j46i433i512j46i67i433j46i433i512j0i433i512j0i67j0i512j46i175i199i512j0i433i512j0i271.616j0j15&sourceid=chrome&ie=UTF-8"
                                         {%  else %}
                                  href="https://www.google.com/search?q=aze&rlz=1C1ONGR_frFR996FR996&oq=aze&aqs=chrome..69i57j46i433i512j46i67i433j46i433i512j0i433i512j0i67j0i512j46i175i199i512j0i433i512j0i271.616j0j15&sourceid=chrome&ie=UTF-8"
-                                        {% endif %}
->
-                </div>
+                                        {% endif %}>
             </section>
         </div>
     </div>

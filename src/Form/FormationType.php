@@ -8,6 +8,8 @@ use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -34,9 +36,8 @@ class FormationType extends AbstractType
                 'label' => 'Corps de l\'article'
             ])
             ->add('publishedAt')
-            ->add('createdBy', EntityType::class, [
-                'class' => User::class,
-                'choice_label' => 'username',
+            ->add('createdBy', ChoiceType::class, [
+                'choice_label' =>  $options['test'] ,
             ])
             ->add('isValidate', CheckboxType::class, [
                 'label' => 'Publier l\'article'
@@ -45,11 +46,18 @@ class FormationType extends AbstractType
                 'label' => 'Enregistrer'
             ));
     }
-
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([
-            'data_class' => Formation::class,
-        ]);
+            'test' => false
+            ]
+        );
     }
 }
+
+
+/**
+ * $resolver->setRequired('user');
+$resolver->setAllowedTypes('user', array(User::class, 'int'));
+ *
+ */

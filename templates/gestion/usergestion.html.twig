@@ -8,50 +8,77 @@
 <div class="container">
     <div class="row">
         <div class="col" id="reglage-buttons">
-            <button class="button" type="button"><span></span><a href="{{ url('app_formation') }}">Liste des formations</a></button>
-        </div>
-        <div class="col" id="reglage-buttons">
-            <button class="button" type="button"><span></span><a href="{{ url('app_home') }}">Acceuil</a></button>
-        </div>
-        <div class="col" id="reglage-buttons">
             {% if  app.user is not null %}
                 <button class="button" type="button"><span></span><a href="{{ url('app_quizz_user') }}">Quizz!</a></button>
             {%  else %}
             {% endif %}
         </div>
+        <div class="col" id="reglage-buttons">
+            <button class="button" type="button"><span></span><a href="{{ url('app_formation') }}">Liste des formations</a></button>
+        </div>
+
+
+        <div class="col" id="reglage-buttons">
+            <button class="button" type="button"><span></span><a href="{{ url('app_home') }}">Acceuil</a></button>
+        </div>
     </div>
     <div class="row rowgestion">
         <div class="col-12 col-lg-6">
             <div class="panneau-gauche">
-                <h3>Postulation recues :</h3>
-                <p>     Grâce à votre inscription, vous pourrez suivre les formations mises en ligne, ainsi que crées par nos formateurs. Une grande variétée
-                de choix s'offre à vous, pour pourrez à travers cela en connaitre plus.  <br>     Eco IT est ouvert à tout le monde. Notre objectif est de favoriser
-                    les échanges et le partage des connaissances, meilleures pratiques, retours d’expérience, actualités, etc. pour vous permettre d’agir
-                    concrètement au quotidien, chez vous ou dans votre entreprise. <br>     Nous veillons aussi à ce que le greenwashing ne détourne pas la communauté des
-                    sujets essentiels. </p>
-                <p> Nous vous proposons une esquisse des oeuvres en lien avec une utilisation intelligente de notre technologie.</p>
-                <ul>
-                    <li><a href="https://www.actes-sud.fr/catalogue/essais/tendre-vers-la-sobriete-numerique">Tendre vers la sobriété numérique, Actes Sud, 2021, 13 octobre 2021</a>, Actes Sud, 2021, 13 octobre 2021.</li>
-                    <li><a href="https://www.greenit.fr/2019/09/10/sobriete-numerique-les-cles-pour-agir/">Sobriété numérique : les clés pour agir</a>, Buchet-Chastel, 2019.</li>
-                    <li><a href="https://www.greenit.fr/2019/05/07/ecoconception-web-les-115-bonnes-pratiques-3eme-edition/">Ecoconception web : les 115 bonnes pratiques</a>, Eyrolles, 2012-2019.</li>
-                </ul>
-
+                <div class="border-gestion">
+                    <h3><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-bar-right" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M6 8a.5.5 0 0 0 .5.5h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L12.293 7.5H6.5A.5.5 0 0 0 6 8zm-2.5 7a.5.5 0 0 1-.5-.5v-13a.5.5 0 0 1 1 0v13a.5.5 0 0 1-.5.5z"/>
+                        </svg>Vous êtes connecté en temps que : </h3>
+                    <ul>
+                        <li> • Nom d'utilisateur : </li>
+                        <li> • Email de l'utilisateur : </li>
+                        <li> • Poste de l'utilisateur : </li>
+                    </ul><br><br><br>
+                </div>
+                <div class="border-gestion">
+                    <h3><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-bar-right" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M6 8a.5.5 0 0 0 .5.5h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L12.293 7.5H6.5A.5.5 0 0 0 6 8zm-2.5 7a.5.5 0 0 1-.5-.5v-13a.5.5 0 0 1 1 0v13a.5.5 0 0 1-.5.5z"/>
+                        </svg>Description :</h3>
+                    <p>     Grâce à votre inscription, vous pourrez suivre les formations mises en ligne, ainsi que crées par nos formateurs. Une grande variétée
+                    de choix s'offre à vous, pour pourrez à travers cela en connaitre plus.  <br>     Eco IT est ouvert à tout le monde. Notre objectif est de favoriser
+                        les échanges et le partage des connaissances, meilleures pratiques, retours d’expérience, actualités, etc. pour vous permettre d’agir
+                        concrètement au quotidien, chez vous ou dans votre entreprise. <br>     Nous veillons aussi à ce que le greenwashing ne détourne pas la communauté des
+                        sujets essentiels. </p>
+                    <p> Nous vous proposons une esquisse des oeuvres en lien avec une utilisation intelligente de notre technologie.</p>
+                    <ul>
+                        <li> • <a href="https://www.actes-sud.fr/catalogue/essais/tendre-vers-la-sobriete-numerique">Tendre vers la sobriété numérique, Actes Sud, 2021, 13 octobre 2021</a>, Actes Sud, 2021, 13 octobre 2021.</li>
+                        <li> • <a href="https://www.greenit.fr/2019/09/10/sobriete-numerique-les-cles-pour-agir/">Sobriété numérique : les clés pour agir</a>, Buchet-Chastel, 2019.</li>
+                        <li • ><a href="https://www.greenit.fr/2019/05/07/ecoconception-web-les-115-bonnes-pratiques-3eme-edition/">Ecoconception web : les 115 bonnes pratiques</a>, Eyrolles, 2012-2019.</li>
+                    </ul>
+                </div>
             </div>
         </div>
         <div class="col-12 col-lg-6">
             <div class="panneau-droit">
-                <h3>Vous êtes connecté en temps que : </h3>
-                <ul>
-                    <li>Nom d'utilisateur : </li>
-                    <li>Email de l'utilisateur : </li>
-                    <li>Poste de l'utilisateur : </li>
-                </ul>
-
-
+                <div class="border-gestion">
+                <h3><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-bar-right" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M6 8a.5.5 0 0 0 .5.5h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L12.293 7.5H6.5A.5.5 0 0 0 6 8zm-2.5 7a.5.5 0 0 1-.5-.5v-13a.5.5 0 0 1 1 0v13a.5.5 0 0 1-.5.5z"/>
+                    </svg>Postuler :</h3>
+                        <p>Si vous désirez désirez contribuer au site, développer des cours afin de partager votre savoir ? N'attendez plus, rejoignez l'équipe <i>d'EcoIT</i> ! <br>
+                        Il vous sera seulement demandé de remplir un formulaire complet, Si l’échange au cours d’une réunion entre lui et EcoIT est positif, l’administrateur validera sa demande. </p>
+                <button class="button" type="button"><span></span><a href="{{ url('app_postuler') }}">POSTULER</a></button>
+                </div>
+                <div class="border-gestion">
+                    <h3><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-bar-right" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M6 8a.5.5 0 0 0 .5.5h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L12.293 7.5H6.5A.5.5 0 0 0 6 8zm-2.5 7a.5.5 0 0 1-.5-.5v-13a.5.5 0 0 1 1 0v13a.5.5 0 0 1-.5.5z"/>
+                        </svg>Chiffres clés :</h3>
+                    <ul>
+                        <li> • <a href="https://www.greenit.fr/2020/10/06/4-des-emissions-de-ges/">">Numérique : 4 % des émissions de GES</a>, 2020</li>
+                        <li> • <a href="https://www.greenit.fr/impacts-environnementaux-du-numerique-en-france/">80 % des impacts environnementaux du numérique en France sont importés</a>, 2020</li>
+                        <li> • <a href="https://www.greenit.fr/2020/08/11/le-numerique-represente-21-de-notre-empreinte-ges-soutenable/">Numérique : 21 % de notre forfait GES annuel soutenable</a>, 2020</li>
+                        <li> • <a href="https://www.greenit.fr/2020/08/18/x171-la-croissance-du-poids-de-nos-logiciels/">x171 : la croissance du poids de nos logiciels</a>, 2020</li>
+                        <li> • <a href="https://www.greenit.fr/2020/07/03/dechets-electroniques-21-en-5-ans/">Déchets électroniques : + 21 % en 5 ans</a>, 2020</li>
+                        <li> • <a href="https://www.greenit.fr/2020/03/04/data-center-seulement-6-de-hausse-en-8-ans/">Data center : seulement 6% de hausse de consommation électrique en 8 ans</a>, 2020</li>
+                        <li> • <a href="https://www.greenit.fr/2020/05/26/500-fois-son-poids-en-matiere-premiere/">Smartphone : 500 fois son poids en matière première</a>, 2020</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
-
-
 </div>
 {% endblock %}

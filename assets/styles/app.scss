@@ -1,13 +1,15 @@
 @import "custom";
 @import "~bootstrap/scss/bootstrap";
 
+$background-login: rgba(188,76,63,0.29);
+
 $font-paragraph: Consolas, serif;
 $font-title: New  Bodoni MT , serif;
 $font-button: Century Gothic, sans-serif;
 
-$background-button: rgba(168, 80, 67, 0.67);
+$background-button: rgba(168, 80, 67, 0.41);
 $border-color: #1d8e5a;
-$background-transparant: rgba(168, 80, 67, 0.33);
+$background-transparant: rgba(168, 80, 67, 0.27);
 $lightborder: rgba(103, 192, 158, 0.99);
 * {
   margin: 0;
@@ -24,6 +26,15 @@ $lightborder: rgba(103, 192, 158, 0.99);
   min-width: 100%;
   min-height: 100%;
   background-size: cover;
+}
+#seconnecter {
+  background-image: url("../../public/image/login-pic.jpg");
+  background-position: center;
+  border: 3px solid $lightborder;
+}
+
+#sinscrire {
+  background-image: url("../../public/image/liste-cour.jpg");
 }
 .container-fluid {
   display: flex;
@@ -83,7 +94,7 @@ $lightborder: rgba(103, 192, 158, 0.99);
   border-radius: 25px;
   font-weight: bolder;
   border: 2px solid $lightborder;
-  background: transparent;
+  background-color: $background-button;
   text-decoration: underline;
   color: black;
   cursor: pointer;
@@ -206,7 +217,12 @@ span {
 }
 
 
-
+.container-formation {
+  width: 97%;
+  overflow: auto;
+  max-height: 515px;
+  background-color: $background-transparant;
+}
 
 
 
@@ -214,9 +230,10 @@ span {
 
 .container-list {
   position: relative;
-  width: 90%;
+  width: 95%;
+  overflow-x: hidden;
   overflow-y: auto;
-  max-height: 1020px;
+  max-height: 490px;
   scroll-margin-block: 10px;
   margin-bottom: 80px;
   margin-left: auto;
@@ -276,7 +293,7 @@ span {
 
 
 .contain-register {
-  background-color: rgba(188,76,63,0.29);
+  background-color: $background-login;
   margin-left: auto;
   margin-right: auto;
 
@@ -312,16 +329,7 @@ span {
 
 
 
-#seconnecter {
-  background-image: url("../../public/image/login-picture.jpg");
-  max-height: 950px;
-  overflow-y: auto;
-  scroll-margin-block: 10px;
-}
 
-#sinscrire {
-  background-image: url("../../public/image/liste-cour.jpg");
-}
 .premiere-visite {
   font-family:  $font-button;
   display:flex;
@@ -404,35 +412,67 @@ span {
     margin-bottom: 80px;
     overflow-y: scroll;
     text-align: center;
-
-    p {
-      font-weight: bold;
-      color: black;
-      font-family: $font-paragraph;
-      font-size: 16px;
-    }
+  }
+  .border-gestion {
+    border: 1px solid rgba(188,76,63,1);
+    margin: 3px;
+  }
+  img {
+    height: 40%;
+    width: 34%;
+    margin-bottom: 20px;
+  }
+  p {
+    margin-top: 50px;
+    font-weight: bold;
+    color: black;
+    font-size: 16px;
+  }
+  li {
+    text-align: start;
+    font-family: $font-paragraph;
+    font-weight: bold;
+    font-size: 17px;
+  }
+  button {
+    margin: 25px;
   }
   h3 {
     font-family: $font-title;
-    margin: 20px;
+    margin-top: 30px;
+    margin-bottom: 20px;
     text-decoration: underline 3px $border-color;
     font-weight: bold;
-
+    img {
+      z-index: 4;
+      width: 25px;
+      height: 25px;
+    }
   }
   .panneau-droit {
     margin-top: 20px;
     position: relative;
     width: 100%;
     height: 1000px;
-    background-color: #5eb5e0;
+    font-family: $font-paragraph;
+    background-color: $background-transparant;
   }
   .panneau-gauche {
     margin-top: 20px;
     position: relative;
     width: 100%;
     height: 1000px;
-    background-color: #AAAAAA;
+    font-family: $font-paragraph;
+    background-color: $background-transparant;
   }
+}
+#adminpicture2 {
+  height: 100px;
+  width: 60px;
+}
+#adminpicture {
+  height: 100px;
+  width: 160px;
 }
 
 

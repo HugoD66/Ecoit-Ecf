@@ -11,9 +11,13 @@ class TeatcherController extends AbstractController
     #[Route('/teatcher', name: 'app_teatcher')]
     public function index(): Response
     {
+        $user = $this->getUser();
+
 
         return $this->render('gestion/teatcher.html.twig', [
             'title' => 'Page gestion professeur EcoIT',
+            'user' => $user,
+
         ]);
     }
 }

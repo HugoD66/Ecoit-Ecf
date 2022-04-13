@@ -55,7 +55,10 @@ security:
          # - { path: ^/createform, roles: ROLE_TEATCHER }
          #- { path: ^/admin, roles: ROLE_SUPER_ADMIN }
          #- { path: ^/teatcher, roles: ROLE_TEATCHER  }
+         #- { path: ^/createform, roles: ROLE_TEATCHER  }
          #- { path: ^/usergestion, roles: ROLE_USER  }
+
+
 
 when@test:
     security:

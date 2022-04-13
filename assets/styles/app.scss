@@ -11,6 +11,8 @@ $background-button: rgba(168, 80, 67, 0.41);
 $border-color: #1d8e5a;
 $background-transparant: rgba(168, 80, 67, 0.27);
 $lightborder: rgba(103, 192, 158, 0.99);
+
+
 * {
   margin: 0;
   padding: 0;
@@ -61,7 +63,7 @@ $lightborder: rgba(103, 192, 158, 0.99);
   font-size: 17px;
   overflow-x: hidden;
   &:hover {
-    text-decoration: rgba(68, 136, 68, 0.90) underline 6px;
+    text-decoration: rgba(148, 161, 76, 0.85) underline 6px;
   }
 }
 .content {
@@ -215,19 +217,15 @@ span {
     font-family:  $font-button;
   }
 }
-
-
 .container-formation {
+  margin-right: auto;
+  margin-left: auto;
   width: 97%;
-  overflow: auto;
-  max-height: 515px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  max-height: 512px;
   background-color: $background-transparant;
 }
-
-
-
-
-
 .container-list {
   position: relative;
   width: 95%;
@@ -274,24 +272,6 @@ span {
   margin-top: 12px;
   text-decoration: underline;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .contain-register {
   background-color: $background-login;
   margin-left: auto;
@@ -312,24 +292,6 @@ span {
     text-align: center;
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .premiere-visite {
   font-family:  $font-button;
   display:flex;
@@ -377,23 +339,6 @@ span {
   font-weight: bold;
   font-family: $font-paragraph;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .container {
   margin-left: auto;
   margin-right: auto;
@@ -474,12 +419,6 @@ span {
   height: 100px;
   width: 160px;
 }
-
-
-
-
-
-
 /**
 #enregistrement {
       position: absolute;

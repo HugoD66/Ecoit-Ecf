@@ -17,7 +17,7 @@ class Formation
     private $titre;
 
     #[ORM\Column(type: 'string', length: 255)]
-    private $image;
+    private $media;
 
     #[ORM\Column(type: 'string', length: 255)]
     private $description;
@@ -49,14 +49,14 @@ class Formation
         return $this;
     }
 
-    public function getImage(): ?string
+    public function getMedia(): ?string
     {
-        return $this->image;
+        return $this->media;
     }
 
-    public function setImage(string $image): self
+    public function setMedia(string $media): self
     {
-        $this->image = $image;
+        $this->media = $media;
 
         return $this;
     }

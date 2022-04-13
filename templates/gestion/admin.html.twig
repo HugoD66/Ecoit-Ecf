@@ -15,9 +15,6 @@
             </div>
         </div>
 
-
-
-
         <div class="row rowgestion">
             <div class="col-12 col-lg-6">
                 <div class="panneau-gauche">
@@ -26,10 +23,9 @@
                                 <path fill-rule="evenodd" d="M6 8a.5.5 0 0 0 .5.5h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L12.293 7.5H6.5A.5.5 0 0 0 6 8zm-2.5 7a.5.5 0 0 1-.5-.5v-13a.5.5 0 0 1 1 0v13a.5.5 0 0 1-.5.5z"/>
                         </svg>Postulation recues :</h3>
                         <ul>
-                            <li>Naztyarzeereryyrr : </li>
-                            <li>Naztyarzeereryyrr : </li>
-                            <li>Naztyarzeereryyrr : </li>
-                            <li>Naztyarzeereryyrr : </li>
+                            {% for v in validteatcher %}
+                            <li>{{ v.email }} </li>
+                            {% endfor %}
                         </ul>
                     </div>
                     <img src="{{ asset('image/admin-pic2.png') }}" alt="Login picture" id="adminpicture"/>
@@ -45,8 +41,21 @@
                             <li>Naztyarzeereryyrr : </li>
                         </ul>
                     </div>
+                    <div class="border-gestion">
+                        <h3><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-bar-right" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M6 8a.5.5 0 0 0 .5.5h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L12.293 7.5H6.5A.5.5 0 0 0 6 8zm-2.5 7a.5.5 0 0 1-.5-.5v-13a.5.5 0 0 1 1 0v13a.5.5 0 0 1-.5.5z"/>
+                            </svg>Compétences d'un Administrateur </h3>
+                        <ul>
+                            <li>Antécédents et expérience. ...</li>
+                            <li>Intégrité et responsabilité ...</li>
+                            <li>Connaissances. ..</li>
+                            <li>Contribution. ...</li>
+                            <li>Travail d'équipe. ...</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
+
             <div class="col-12 col-lg-6">
                 <div class="panneau-droit">
                     <div class="border-gestion">
@@ -54,9 +63,11 @@
                                 <path fill-rule="evenodd" d="M6 8a.5.5 0 0 0 .5.5h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L12.293 7.5H6.5A.5.5 0 0 0 6 8zm-2.5 7a.5.5 0 0 1-.5-.5v-13a.5.5 0 0 1 1 0v13a.5.5 0 0 1-.5.5z"/>
                             </svg>Vous êtes connecté en temps que : </h3>
                             <ul>
-                                <li>Nom d'utilisateur : </li>
-                                <li>Email de l'utilisateur : </li>
-                                <li>Poste de l'utilisateur : </li>
+                                <li> • Pseudonyme : {{ user.username }} </li>
+                                <li> • Prénom d'utilisateur : {{ user.lastname }} </li>
+                                <li> • Nom d'utilisateur : {{ user.name }} </li>
+                                <li> • Email de l'utilisateur : {{ user.email }}</li>
+                                <li> • Poste de l'utilisateur : Admin </li>
                             </ul>
                     </div>
                     <img src="{{ asset('image/admin-pic.png') }}" alt="Login picture 2" id="adminpicture2"/>
@@ -66,11 +77,20 @@
                                 <path fill-rule="evenodd" d="M6 8a.5.5 0 0 0 .5.5h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L12.293 7.5H6.5A.5.5 0 0 0 6 8zm-2.5 7a.5.5 0 0 1-.5-.5v-13a.5.5 0 0 1 1 0v13a.5.5 0 0 1-.5.5z"/>
                             </svg>Statistiques de l'application </h3>
                             <ul>
-                                <li>Nombre de personnes inscrites : </li>
-                                <li>Nombre de personnes connectées : </li>
-                                <li>Nombre de professeurs :  </li>
+                                <li> • Nombre de personnes inscrites : {{ count }} </li>
+                                <li> • Nombre de professeurs : {{ countteatcher }} </li>
+                                <li>  </li>
                             </ul>
                     </div>
+                    <div class="border-gestion">
+                        <h3><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-bar-right" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M6 8a.5.5 0 0 0 .5.5h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L12.293 7.5H6.5A.5.5 0 0 0 6 8zm-2.5 7a.5.5 0 0 1-.5-.5v-13a.5.5 0 0 1 1 0v13a.5.5 0 0 1-.5.5z"/>
+                            </svg>Role d'un Administrateur </h3>
+                        <p>Quel est le rôle juridique d'un administrateur ? Au sein du conseil d'administration, quand il existe, il doit effectivement contrôler les comptes,
+                            informer les actionnaires, mais être aussi mandataire social et également participer à la stratégie de l'entreprise.
+                        </p>
+                    </div>
+
                 </div>
             </div>
         </div>

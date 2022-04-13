@@ -61,6 +61,24 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
         $this->_em->persist($user);
         $this->_em->flush();
     }
+    public function countUser()
+    {
+        return $this->createQueryBuilder('u')
+            ->select('count(u.id)')
+            ->getQuery()
+            ->getSingleScalarResult();
+    }
+    public function countTeatcher()
+    {
+        return $this->createQueryBuilder('u')
+            ->select('count(u.id)')
+            ->andWhere('u.roles = :val')
+            ->setParameter('val', '["ROLE_TEATCHER"]')
+            ->getQuery()
+            ->getResult();
+    }
+
+
 
     // /**
     //  * @return User[] Returns an array of User objects
@@ -68,7 +86,7 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
     /*
     public function findByExampleField($value)
     {
-        return $this->createQueryBuilder('u')
+        return $this->createQueryBuilder("u')
             ->andWhere('u.exampleField = :val')
             ->setParameter('val', $value)
             ->orderBy('u.id', 'ASC')

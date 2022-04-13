@@ -13,9 +13,12 @@ class UserGestionController extends AbstractController
     #[Route('/usergestion', name: 'app_user_gestion')]
     public function index(): Response
     {
+        $user = $this->getUser();
 
         return $this->render('gestion/usergestion.html.twig', [
-            'title' => 'Page de gestion Utilisateur'
-            ]);
+            'title' => 'Page de gestion Utilisateur',
+            'user' => $user,
+
+        ]);
     }
 }

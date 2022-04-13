@@ -31,7 +31,7 @@ class FormationType extends AbstractType
                     ])
                 ]
             ])
-            ->add('image')
+            ->add('media')
             ->add('description', TextareaType::class, [
                 'label' => 'Corps de l\'article'
             ])
@@ -56,8 +56,4 @@ class FormationType extends AbstractType
 }
 
 
-/**
- * $resolver->setRequired('user');
-$resolver->setAllowedTypes('user', array(User::class, 'int'));
- *
- */
+

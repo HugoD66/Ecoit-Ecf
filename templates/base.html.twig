@@ -55,7 +55,6 @@
                 <a href="https://www.instagram.com/?hl=fr" target="_blank">
                     <img class="btn btn-outline-light" src="{{ asset('image/instagram.svg') }}" alt="insta">
                 </a>
-
                 {% if is_granted('ROLE_ADMIN') %}
                     <a href="{{ path('app_admin_gestion') }}}">
                         <img class src="{{ asset('image/gestion.png') }}" alt="gestion" role="button" id="button-reglage">

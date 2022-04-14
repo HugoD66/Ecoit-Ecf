@@ -8,7 +8,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class TeatcherController extends AbstractController
 {
-    #[Route('/teatcher', name: 'app_teatcher')]
+    #[Route('/teatcher', name: 'app_teatcher_gestion')]
     public function index(): Response
     {
         $user = $this->getUser();

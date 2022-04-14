@@ -55,21 +55,22 @@
                 <a href="https://www.instagram.com/?hl=fr" target="_blank">
                     <img class="btn btn-outline-light" src="{{ asset('image/instagram.svg') }}" alt="insta">
                 </a>
-                {% if is_granted('ROLE_ADMIN') %}
-                    <a href="{{ path('app_admin_gestion') }}}">
+
+                {% if  is_granted('ROLE_TEATCHER') %}
+                    <a href="{{ path('app_teatcher_gestion') }}">
+                    <img class src="{{ asset('image/gestion.png') }}" alt="gestion" role="button" id="button-reglage">
+                    </a>
+                {% elseif  is_granted('ROLE_ADMIN') %}
+                    <a href="{{ path('app_admin') }}}">
                         <img class src="{{ asset('image/gestion.png') }}" alt="gestion" role="button" id="button-reglage">
                     </a>
-                {% endif %}
-                {% if is_granted('ROLE_TEATCHER') %}
-                    <a href="{{ path('app_teatcher') }}">
-                        <img class src="{{ asset('image/gestion.png') }}" alt="gestion" role="button" id="button-reglage">
-                    </a>
-                {% endif %}
-                {% if is_granted('ROLE_USER') %}
+                {% elseif  is_granted('ROLE_USER') %}
                     <a href="{{ path('app_user_gestion') }}">
                         <img class src="{{ asset('image/gestion.png') }}" alt="gestion" role="button" id="button-reglage">
                     </a>
                 {% endif %}
+
+
             </section>
         </div>
     </div>

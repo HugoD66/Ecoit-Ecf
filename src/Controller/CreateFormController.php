@@ -20,6 +20,7 @@ class CreateFormController extends AbstractController
         $form = $this->createForm(FormationType::class, $formation, array(
             'test' => $username,
         ));
+        //addFormation()//
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
             $formation = $form->getData();
@@ -28,7 +29,6 @@ class CreateFormController extends AbstractController
          return $this->render('formation/createform.html.twig', [
         'form' => $form->createView(),
         'title' => 'Creation de Formation Eco IT',
-
     ]);
     }
 }

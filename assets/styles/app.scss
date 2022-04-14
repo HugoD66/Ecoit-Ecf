@@ -377,6 +377,14 @@ span {
     font-family: $font-paragraph;
     font-weight: bold;
     font-size: 17px;
+    #button1 {
+      float: right;
+      width:25%;
+    }
+    #button2 {
+      float: left;
+      width:25%;
+    }
   }
   button {
     margin: 25px;

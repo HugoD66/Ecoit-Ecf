@@ -73,6 +73,27 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
         return $this->createQueryBuilder('u')
             ->select('count(u.id)')
             ->andWhere('u.roles = :val')
+            ->andWhere('u.validate = 1')
+            ->setParameter('val', '["ROLE_TEATCHER"]')
+            ->getQuery()
+            ->getResult();
+    }
+    public function validateTeatcher()
+    {
+        return $this->createQueryBuilder('u')
+            ->select('u.username, u.email, u.name')
+            ->andWhere('u.validate = 1')
+            ->andWhere('u.roles = :val')
+            ->setParameter('val', '["ROLE_TEATCHER"]')
+            ->getQuery()
+            ->getResult();
+    }
+    public function noValidTeatcher()
+    {
+        return $this->createQueryBuilder('u')
+            ->select('u.username, u.email, u.name, u.validate')
+            ->andWhere('u.validate = 0')
+            ->andWhere('u.roles = :val')
             ->setParameter('val', '["ROLE_TEATCHER"]')
             ->getQuery()
             ->getResult();

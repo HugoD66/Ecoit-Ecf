@@ -20,7 +20,7 @@ kernel:
 
 admin:
     path: /admin
-    controller: App\Controller\BlogController::admin
+    controller: App\Controller\HomeController::admin
 
 
 

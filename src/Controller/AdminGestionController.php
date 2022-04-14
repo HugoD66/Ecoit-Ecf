@@ -4,28 +4,21 @@ namespace App\Controller;
 
 use App\Entity\User;
 use Doctrine\Persistence\ManagerRegistry;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 class AdminGestionController extends AbstractController
 {
-
-
     #[Route('/admin', name: 'app_admin')]
     public function index(ManagerRegistry $doctrine): Response
     {
         $user = $this->getUser();
-
         $count = $doctrine->getRepository(User::class)->countUser();
         $countteatcher = $doctrine->getRepository(User::class)->countTeatcher();
 
         $novalidteatcher = $doctrine->getRepository(User::class)->noValidTeatcher();
         $teatchervalide = $doctrine->getRepository(User::class)->validateTeatcher();
-
-        $valider = $user->setValidate(1);
-
 
         return $this->render('gestion/admin.html.twig', [
             'title' => 'Page gestion admin EcoIT',
@@ -34,9 +27,27 @@ class AdminGestionController extends AbstractController
             'countteatcher'  => $countteatcher[0][1],
             'novalidteatcher'  => $novalidteatcher,
             'teatchervalide' => $teatchervalide,
-            'valider' => $valider,
-
         ]);
+    }
+    #[Route('/admin/valider/{id}', name: 'valid_post')]
+    public function admin(ManagerRegistry $doctrine, int $id): Response
+    {
+        $entityManager = $doctrine->getManager();
+        $validate = $entityManager->getRepository(User::class)->findOneBy(['id' => $id]);
+        $validate->setValidate(1);
+        $entityManager->flush();
+
+        return $this->redirectToRoute('app_admin');
+    }
+    #[Route('/admin/refuser/{id}', name: 'refuse_post')]
+    public function refuse(ManagerRegistry $doctrine, int $id): Response
+    {
+        $entityManager = $doctrine->getManager();
+        $refuse = $entityManager->getRepository(User::class)->findOneBy(['id' => $id]);
+        $entityManager->remove($refuse);
+        $entityManager->flush();
+
+        return $this->redirectToRoute('app_admin');
     }
 }
 

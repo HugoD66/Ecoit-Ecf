@@ -61,6 +61,10 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
         $this->_em->persist($user);
         $this->_em->flush();
     }
+
+
+
+
     public function countUser()
     {
         return $this->createQueryBuilder('u')
@@ -91,7 +95,6 @@ class UserRepository extends ServiceEntityRepository implements PasswordUpgrader
     public function noValidTeatcher()
     {
         return $this->createQueryBuilder('u')
-            ->select('u.username, u.email, u.name, u.validate')
             ->andWhere('u.validate = 0')
             ->andWhere('u.roles = :val')
             ->setParameter('val', '["ROLE_TEATCHER"]')

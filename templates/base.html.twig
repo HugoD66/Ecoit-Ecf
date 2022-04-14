@@ -61,7 +61,7 @@
                     <img class src="{{ asset('image/gestion.png') }}" alt="gestion" role="button" id="button-reglage">
                     </a>
                 {% elseif  is_granted('ROLE_ADMIN') %}
-                    <a href="{{ path('app_admin') }}}">
+                    <a href="{{ path('app_admin') }}">
                         <img class src="{{ asset('image/gestion.png') }}" alt="gestion" role="button" id="button-reglage">
                     </a>
                 {% elseif  is_granted('ROLE_USER') %}

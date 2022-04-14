@@ -231,6 +231,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $this;
     }
 
+
     public function removeFormation(Formation $formation): self
     {
         if ($this->formations->removeElement($formation)) {

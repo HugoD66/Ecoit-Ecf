@@ -32,6 +32,10 @@ class Formation
     #[ORM\Column(type: 'datetime_immutable')]
     private $publishedAt;
 
+    #[ORM\OneToOne(mappedBy: 'formation', targetEntity: Study::class, cascade: ['persist', 'remove'])]
+    #[ORM\JoinColumn(nullable: true)]
+    private $study;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -105,6 +109,28 @@ class Formation
     public function setPublishedAt(\DateTimeImmutable $publishedAt): self
     {
         $this->publishedAt = $publishedAt;
+
+        return $this;
+    }
+
+    public function getStudy(): ?Study
+    {
+        return $this->study;
+    }
+
+    public function setStudy(?Study $study): self
+    {
+        // unset the owning side of the relation if necessary
+        if ($study === null && $this->study !== null) {
+            $this->study->setFormation(null);
+        }
+
+        // set the owning side of the relation if necessary
+        if ($study !== null && $study->getFormation() !== $this) {
+            $study->setFormation($this);
+        }
+
+        $this->study = $study;
 
         return $this;
     }

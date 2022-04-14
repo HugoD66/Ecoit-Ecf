@@ -7,7 +7,13 @@
     <p>C’est un fait, la <i>crise écologique</i> est devenue une urgence majeure. La sixième extinction
         massive a déjà commencé.<br> Mais qu’en est-il d’<b>internet</b> ?</p>
     <div>
-        <button class="button" type="button"><span></span><a href="{{ url('app_postuler') }}">POSTULER</a></button>
+        <button class="button" type="button"><span></span><a href="
+             {% if  is_granted('ROLE_TEATCHER') %}
+                {{ url('app_cant_postuler') }}
+             {% else %}
+                 {{  url('app_postuler') }}
+             {% endif %}
+                                                          ">POSTULER</a></button>
         <button class="button" type="button" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><span></span>EN SAVOIR PLUS</button>
         <button class="button" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"><span></span>DERNIERS COURS</button>
         <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">

@@ -6,13 +6,13 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class CantRegistryAgainController extends AbstractController
+class CantPostulerController extends AbstractController
 {
-    #[Route('/cantregistry', name: 'app_cant_registry_again')]
+    #[Route('/cantpostuler', name: 'app_cant_postuler')]
     public function index(): Response
     {
-        return $this->render('security/cantregister.html.twig', [
-            'title' => 'Enregistrement Impossible - Eco IT',
+        return $this->render('security/cantpostuler.html.twig', [
+            'title' => 'Postulation Impossible - Eco IT',
         ]);
     }
 }

@@ -244,4 +244,27 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $this;
     }
 
+
+
+
+
+
+    /**
+     * @ORM\Column(type="string")
+     */
+    private $pictureFilename;
+
+    public function getPictureFilename()
+    {
+        return $this->pictureFilename;
+    }
+
+    public function setPictureFilename($pictureFilename)
+    {
+        $this->pictureFilename = $pictureFilename;
+
+        return $this;
+    }
+
+
 }

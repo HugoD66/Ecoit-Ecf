@@ -20,6 +20,8 @@ class AdminGestionController extends AbstractController
         $novalidteatcher = $doctrine->getRepository(User::class)->noValidTeatcher();
         $teatchervalide = $doctrine->getRepository(User::class)->validateTeatcher();
 
+        $picture = $this->getUser()->getPicture();
+
         return $this->render('gestion/admin.html.twig', [
             'title' => 'Page gestion admin EcoIT',
             'user' => $user,
@@ -27,6 +29,7 @@ class AdminGestionController extends AbstractController
             'countteatcher'  => $countteatcher[0][1],
             'novalidteatcher'  => $novalidteatcher,
             'teatchervalide' => $teatchervalide,
+            'picture' => $picture,
         ]);
     }
     #[Route('/admin/valider/{id}', name: 'valid_post')]

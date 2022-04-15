@@ -24,7 +24,7 @@
                         </svg>Postulation recues :</h3>
                         <ul>
                             {% for n in novalidteatcher %}
-                                <li>• <ul> <li>Nom d'utilisateur : {{ n.username }}</li><li>Email : {{ n.email }}</li><li>Nom : {{ n.name }}</li><li>Prenom : {{ n.lastname }}</li><li>Description : {{ n.description }}</li><li>Photo : <a href="#">{{ n.picture }}</a></li>
+                                <li>• <ul> <li>Nom d'utilisateur : {{ n.username }}</li><li>Email : {{ n.email }}</li><li>Nom : {{ n.name }}</li><li>Prenom : {{ n.lastname }}</li><li>Description : {{ n.description }}</li><li>Photo : <a href="{{ asset('/public/picture/' ~ user.picture) }}">{{ n.picture }}</a></li>
 
                                     </ul>
                                 </li>

@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\User;
 use App\Form\PostulerType;
 use App\Security\EmailVerifier;
+use App\Service\FileUploader;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -30,7 +31,7 @@ class PostulerController extends AbstractController
     }
 
     #[Route('/postuler', name: 'app_postuler')]
-    public function new(Request $request, UserPasswordHasherInterface $userPasswordHasher,  EntityManagerInterface $entityManager, SluggerInterface $slugger): Response
+    public function new(Request $request, UserPasswordHasherInterface $userPasswordHasher,  EntityManagerInterface $entityManager, FileUploader $fileUploader): Response
     {
 
         $user = new User();
@@ -39,33 +40,27 @@ class PostulerController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $directory = '/public/image-post/';
+            /** @var UploadedFile $pictureFile */
+            $pictureFile = $form->get('picture')->getData();
 
-            $brochureFile = $form->get('picture')->getData();
 
-            // this condition is needed because the 'brochure' field is not required
-            // so the PDF file must be processed only when a file is uploaded
-            if ($brochureFile) {
-                $originalFilename = pathinfo($brochureFile->getClientOriginalName(), PATHINFO_FILENAME);
-                // this is needed to safely include the file name as part of the URL
-                $safeFilename = $slugger->slug($originalFilename);
-                $newFilename = $safeFilename.'-'.uniqid().'.'.$brochureFile->guessExtension();
 
-                // Move the file to the directory where brochures are stored
-                try {
-                    $brochureFile->move(
-                        $this->getParameter('brochures_directory'),
-                        $newFilename
-                    );
-                } catch (FileException $e) {
-                    // ... handle exception if something happens during file upload
-                }
+            if ($pictureFile) {
+                $originalFilename = pathinfo($pictureFile->getClientOriginalName(), PATHINFO_FILENAME);
 
-                // updates the 'brochureFilename' property to store the PDF file name
-                // instead of its contents
 
-                $user->setPicture(
-                    new File($this->getParameter('brochures_directory').'/'.$user->getPicture()));
+
+                $pictureFilename = $fileUploader->upload($pictureFile);
+                $user->setPictureFilename($pictureFilename);
+
+                $user->setPictureFilename(
+                    new File($this->getParameter('picture').'/'.$user->getPictureFilename())
+                );
+
+
+
+
+
             }
                 $user->setPassword(
                 $userPasswordHasher->hashPassword(
@@ -77,6 +72,7 @@ class PostulerController extends AbstractController
             $user->setValidate(0);
             $entityManager->persist($user);
             $entityManager->flush();
+
             $this->emailVerifier->sendEmailConfirmation('app_verify_email', $user,
                 (new TemplatedEmail())
                     ->from(new Address('dessauw.hugo66@gmail.com', 'Eco it'))

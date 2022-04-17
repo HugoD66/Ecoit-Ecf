@@ -12,6 +12,7 @@
         "doctrine/orm": "^2.11",
         "league/commonmark": "^2.2",
         "sensio/framework-extra-bundle": "^6.2",
+        "symfony/apache-pack": "^1.0",
         "symfony/asset": "6.0.*",
         "symfony/console": "6.0.*",
         "symfony/dotenv": "6.0.*",
@@ -20,6 +21,7 @@
         "symfony/framework-bundle": "6.0.*",
         "symfony/google-mailer": "6.0.*",
         "symfony/mailer": "6.0.*",
+        "symfony/maker-bundle": "^1.38",
         "symfony/proxy-manager-bridge": "6.0.*",
         "symfony/runtime": "6.0.*",
         "symfony/security-bundle": "6.0.*",
@@ -74,7 +76,10 @@
         ],
         "post-update-cmd": [
             "@auto-scripts"
-        ]
+        ],
+        "compile": [
+            "php bin/console doctrine:migrations:migrate"
+            ]
     },
     "conflict": {
         "symfony/symfony": "*"
@@ -87,7 +92,6 @@
     },
     "require-dev": {
         "symfony/debug-bundle": "6.0.*",
-        "symfony/maker-bundle": "^1.38",
         "symfony/monolog-bundle": "^3.0",
         "symfony/stopwatch": "6.0.*",
         "symfony/web-profiler-bundle": "6.0.*"
